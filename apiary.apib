@@ -1,0 +1,222 @@
+FORMAT: 1A
+HOST: http://api.knockrentals.com
+
+# knock
+Knock API is a service for vending and modifying data for knockrentals
+
+# Group Authentication
+Authenticating users through the **Knock API**
+
+##Allowed HTTPs requests:
+
+- `POST` - Creates or updates a resource
+- `PUT` - Updates a resource
+- `GET` - Retrieves a resource or list of resources
+- `DELETE` - Delete a resource
+
+# Group Manager
+## Manager [/api/v1/manager/]
+### Get this manager [GET]
++ Request
+    + Header
+        
+            Authorization: Bearer <manager-token>
+
++ Response 200 (application/json)
+
+        {
+            "manager": {
+                "created_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                "id": 1,
+                "is_active": true,
+                "modified_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                "provider": "knock",
+                "username": "daniel@knockrentals.com"
+            }
+        }
+
+## Manager Info [/api/v1/manager/info]
+### Get this manager's info [GET]
++ Request
+    + Header
+        
+            Authorization: Bearer <manager-token>
+
++ Response 200 (application/json)
+
+        {
+            "manager_info": {
+                "bio": "Doesn't like turtlenecks",
+                "email": "fatisar@gmail.com",
+                "first_name": "Daniel",
+                "job_title": "Developer",
+                "last_name": "Sarfati",
+                "manager_id": 1,
+                "phone": "210-216-6887",
+                "photo": "steelydan.jpeg",
+                "verification_method": "text"
+            }
+        }
+
+### Update this manager's info [POST]
++ Request
+    + Header
+    
+            Content-Type: application/json
+            Authorization: Bearer <manager-token>
+
+    + Body
+    
+            {
+                "bio": "Doesn't like turtlenecks",
+                "email": "fatisar@gmail.com",
+                "first_name": "Daniel",
+                "job_title": "Developer",
+                "last_name": "Sarfati",
+                "phone": "210-216-6887",
+                "photo": "steelydan.jpeg",
+                "verification_method": "text"
+            }
+
++ Response 201 (application/json)
+    + Body
+        
+            {
+                "manager_info": 1
+            }
+
+## Manager Preferences [/api/v1/manager/preferences]
+### Get this manager's preferences [GET]
++ Request
+    + Header
+        
+            Authorization: Bearer <manager-token>
+
++ Response 200 (application/json)
+
+        {
+            "manager": {
+                "adjacent_showing_interval": "0:15:00",
+                "all_showings": false,
+                "concurrent_showing_visitors": 3,
+                "income_requirement_multiplier": 2,
+                "manager_id": 1
+            }
+        }
+        
+### Update this manager's preferences [POST]
++ Request
+    + Header
+        
+            Content-Type: application/json
+            Authorization: Bearer <manager-token>
+    + Body
+    
+            {
+                "all_showings": false,
+                "concurrent_showing_visitors": 3,
+                "adjacent_showing_interval": 15,
+                "income_requirement_multiplier": 1.5
+            }
++ Response 201 (application/json)
+    + Body
+    
+            {
+                "manager_preferences": 1
+            }
+
+# Group Calendar
+
+## Appointment Request [/api/v1/calendar/request/]
+### Get all appointment requests [GET]
++ Response 200 (application/json)
+
+        {
+            "requests": [
+                {
+                    "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "end_time": "Mon, 13 Oct 2014 19:00:00 GMT",
+                    "id": 2,
+                    "is_active": true,
+                    "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+                    "manager_id": 1,
+                    "manager_notes": null,
+                    "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "renter_id": 2,
+                    "renter_notes": "Some renter written writings",
+                    "renter_visited": false,
+                    "start_time": "Mon, 13 Oct 2014 17:00:00 GMT",
+                    "status": "pending",
+                    "type": "tour"
+                },
+                {
+                    "created_time": "Wed, 03 Sep 2014 08:29:28 GMT",
+                    "end_time": "Mon, 13 Oct 2014 19:00:00 GMT",
+                    "id": 3,
+                    "is_active": true,
+                    "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+                    "manager_id": 1,
+                    "manager_notes": null,
+                    "modified_time": "Wed, 03 Sep 2014 08:29:28 GMT",
+                    "renter_id": 2,
+                    "renter_notes": "Some renter written writings",
+                    "renter_visited": false,
+                    "start_time": "Mon, 13 Oct 2014 17:00:00 GMT",
+                    "status": "pending",
+                    "type": "tour"
+                }
+            ]
+        }
+
+### Create an appointment request [POST]
+A request originating from a renter will replace the 
+given renter_id. The same is true for a request originating 
+from a manager (manager_id will be replaced).
+
++ Request (application/json)
+
+        {
+            "manager_id": 1,
+            "renter_id": 2,
+            "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+            "timezone": "US/Pacific",
+            "start_time": "2014-10-13 10:00",
+            "end_time": "2014-10-13 12:00",
+            "type": "tour",
+            "manager_notes": "A note from the manager" (optional),
+            "renter_notes": "Some renter written writings" (optional)
+        }
+
++ Response 201 (application/json)
+
+        {
+            "created": 4
+        }
+        
+
+
+## Modify appointment request status [/api/v1/calendar/request/<request_id/status]
+Endpoints for a manager to accept or reject an appointment request
+
++ Parameters
+    + request_id (required, number, `1`) ... Numeric `id` of the request to accept
+
+### Change the status of an appointment request as a manager [POST]
++ Request (application/json)
+    + Header
+    
+            Authorization: Bearer <manager-token>
+    + Body
+
+            {
+                "status": "accepted" | "rejected"
+            }
+            
++ Response 201 (application/json)
+
+        {
+            "request_id": 4
+        }
+    
+
+
