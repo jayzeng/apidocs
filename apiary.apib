@@ -13,6 +13,7 @@ Authenticating users through the **Knock API**
 - `PUT` - Updates a resource
 - `GET` - Retrieves a resource or list of resources
 - `DELETE` - Delete a resource
+
 # Group Calendar
 
 ## Appointment Request [/api/v1/calendar/request/]
@@ -83,7 +84,7 @@ from a manager (manager_id will be replaced).
 
 
 
-## Modify appointment request status [/api/v1/calendar/request/<request_id/status]
+## Modify appointment request status [/api/v1/calendar/request/<request_id>/status]
 Endpoints for a manager to accept or reject an appointment request
 
 + Parameters
@@ -218,4 +219,190 @@ Endpoints for a manager to accept or reject an appointment request
             {
                 "manager_preferences": 1
             }
+
+# Group Listing
+## Listing [/v1/listing/<listing_id>]
+### Get listing by id [GET]
++ Response 200 (application/json)
+    + Body
+    
+            {
+                "listing": {
+                    "amenities": {
+                        "appliances": null,
+                        "common": [
+                            "Air Conditioning",
+                            "Alarm system",
+                            "Built in Microwave",
+                            "Cable ready",
+                            "Cable-ready ",
+                            "Ceiling Fans",
+                            "Custom Cabinets",
+                            "Dishwasher",
+                            "Disposal",
+                            "Electric Cooktop Stove",
+                            "Side By Side Fridge",
+                            "Tile floors",
+                            "Walk-in Closet",
+                            "Washer/Dryer In Unit",
+                            "Window Coverings",
+                            "www.rpmcentralar.com"
+                        ],
+                        "laundry": null,
+                        "parking_type": "false",
+                        "unit": [],
+                        "utilities": {
+                            "estimated_cost": null,
+                            "included": []
+                        },
+                        "views": null
+                    },
+                    "basic": {
+                        "bathrooms": 2,
+                        "bedrooms": 2,
+                        "price": 850,
+                        "size": 1080
+                    },
+                    "debug": {
+                        "raw_url": "https://webreq.propertyware.com/pw/marketing/website.do?sid=70287365&wid=69828613&uid=193200132&action=u",
+                        "source": "propertyware",
+                        "visibility": "internal"
+                    },
+                    "details": {
+                        "description": {
+                            "full": "*Real Property Management 501-834-1333 or www.rpmcentralar.com to apply* \rNew construction minutes from LRAFB. \r2br and 2 full bath, 1080sq ft. \r$50/mo discount for military members! \rFeatures include; Alarm system, Carport, Tile floors throughout, Fridge, Stove, DW, W, Walk-in Closet, and more. \rNo pets, No smoking inside",
+                            "short": "113 W. Republican Rd., Jacksonville 72076"
+                        },
+                        "pets": {
+                            "allowed": [
+                                "any"
+                            ],
+                            "notes": ""
+                        },
+                        "smoking_allowed": "No",
+                        "wheelchair_access": null
+                    },
+                    "id": "9da6ca9090582e8dbaf672b4eaf27b38b074bb11",
+                    "leasing": {
+                        "application": {
+                            "fee": null,
+                            "link": null
+                        },
+                        "available_date": "Fri, 01 Aug 2014 00:00:00 GMT",
+                        "company": {
+                            "name": "RPM Central Arkansas",
+                            "phone": "",
+                            "url": ""
+                        },
+                        "manager": {
+                            "email": "rsherman501@gmail.com",
+                            "imageID": "",
+                            "name": "Robbie Sherman",
+                            "phone": "(501) 834-1333"
+                        },
+                        "terms": {
+                            "deposit": 800,
+                            "lease_length": "12",
+                            "lease_length_unit": "Months"
+                        }
+                    },
+                    "location": {
+                        "address": {
+                            "city": "Jacksonville",
+                            "house": "113",
+                            "raw": "113 W. Republican Rd.  Jacksonville, AR, AR 72076",
+                            "state": "AR",
+                            "street": "W. Republican Rd.",
+                            "unit": "",
+                            "zip": "72076"
+                        },
+                        "geo": {
+                            "coordinates": [
+                                0,
+                                0
+                            ],
+                            "type": "point"
+                        },
+                        "name": "113 W. Republican Rd., 72076",
+                        "property_type": "Residential"
+                    },
+                    "photos": [
+                        "http://s3.amazonaws.com/PRODBUCKET/95f2afa5-483b-414c-9a79-905b644e3cc4",
+                        "http://s3.amazonaws.com/PRODBUCKET/cdd88d8a-f0d8-419c-8770-0681f8abb8ae",
+                        "http://s3.amazonaws.com/PRODBUCKET/457740ec-ee89-45a3-80c5-b204a4abc8d2",
+                        "http://s3.amazonaws.com/PRODBUCKET/f372d054-408d-4e3c-845e-390b4f8384cc",
+                        "http://s3.amazonaws.com/PRODBUCKET/834b532c-41f7-4e3d-a502-c888471d9685",
+                        "http://s3.amazonaws.com/PRODBUCKET/9abdf3e4-84d1-423d-92aa-11c0f0f005ee",
+                        "http://s3.amazonaws.com/PRODBUCKET/5097f048-8ca9-4f64-93c3-d8305d3e55ea",
+                        "http://s3.amazonaws.com/PRODBUCKET/f7c675f3-5d18-46e1-9ec8-301df6a539da",
+                        "http://s3.amazonaws.com/PRODBUCKET/54b1d9bb-1003-47c5-9802-db9c0bfc53d7",
+                        "http://s3.amazonaws.com/PRODBUCKET/83b48497-5bfe-4e7a-b0d2-5016ddac9b50"
+                    ],
+                    "promotions": null,
+                    "social_urls": []
+                },
+                "num_results": 10,
+                "page": 1,
+                "total_pages": 1
+            }
+
+## Listing Calendar [/v1/listing/{listing_id}/calendar{?start,end}]
+
++ Parameters
+
+    + listing_id (string) ... the ID of the listing
+    + start (string) ... ISO-formatted datetime; "2014-09-01T00:00-07:00"
+    + end (string) ... ISO-formatted datetime; "2014-09-07T23:59-07:00"
+    
+### Get this listing's calendar [GET]
+
++ Response 200 (application/json)
+    
+            {
+                "appointments": [
+                    {
+                        "created_time": "Fri, 05 Sep 2014 18:51:25 GMT",
+                        "end_time": "Fri, 05 Sep 2014 19:00:00 GMT",
+                        "id": 8,
+                        "is_active": true,
+                        "listing_id": "9da6ca9090582e8dbaf672b4eaf27b38b074bb11",
+                        "manager_id": 2,
+                        "manager_notes": null,
+                        "modified_time": "Fri, 05 Sep 2014 18:51:25 GMT",
+                        "renter_id": 1,
+                        "renter_notes": null,
+                        "renter_visited": false,
+                        "start_time": "Fri, 05 Sep 2014 18:00:00 GMT",
+                        "status": "pending",
+                        "type": "tour"
+                    },
+                    {
+                        "created_time": "Sun, 07 Sep 2014 01:07:36 GMT",
+                        "end_time": "Sat, 06 Sep 2014 17:00:00 GMT",
+                        "id": 15,
+                        "is_active": true,
+                        "listing_id": "9da6ca9090582e8dbaf672b4eaf27b38b074bb11",
+                        "manager_id": 2,
+                        "manager_notes": null,
+                        "modified_time": "Sun, 07 Sep 2014 01:07:36 GMT",
+                        "renter_id": 1,
+                        "renter_notes": "Some renter written writings",
+                        "renter_visited": false,
+                        "start_time": "Sat, 06 Sep 2014 16:00:00 GMT",
+                        "status": "pending",
+                        "type": "open_house"
+                    }
+                ],
+                "open_houses": []
+            }
+
+## Listing Open House [/v1/listing/<listing_id>/openhouse/]
+### Get all open houses at for this listing [GET]
++ Response 200 (application/json)
+
+            [
+                {
+            
+                }
+            ]
 
