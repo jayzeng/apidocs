@@ -16,6 +16,47 @@ Authenticating users through the **Knock API**
 
 # Group Calendar
 
+## Confirmed Appointments [/api/v1/calendar/appointment/]
+### Get all confirmed appointments [GET]
++ Response 200 (application/json)
+
+        {
+            "appointments": [
+                {
+                    "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "end_time": "Mon, 09 Oct 2014 15:00:00 GMT",
+                    "id": 2,
+                    "is_active": true,
+                    "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+                    "manager_id": 1,
+                    "manager_notes": null,
+                    "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "renter_id": 2,
+                    "renter_notes": "Some renter written writings",
+                    "renter_visited": false,
+                    "start_time": "Mon, 09 Sep 2014 15:00:00 GMT",
+                    "status": "confirmed",
+                    "type": "tour"
+                },
+                {
+                    "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "end_time": "Mon, 08 Sep 2014 17:15:00 GMT",
+                    "id": 2,
+                    "is_active": true,
+                    "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+                    "manager_id": 1,
+                    "manager_notes": null,
+                    "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                    "renter_id": 2,
+                    "renter_notes": "Some renter written writings",
+                    "renter_visited": false,
+                    "start_time": "Mon, 08 Sep 2014 17:00:00 GMT",
+                    "status": "confirmed",
+                    "type": "tour"
+                }
+            ]
+        }
+
 ## Appointment Request [/api/v1/calendar/request/]
 ### Get all appointment requests [GET]
 + Response 200 (application/json)
