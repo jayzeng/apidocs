@@ -16,8 +16,11 @@ Authenticating users through the **Knock API**
 
 # Group Calendar
 
-## Confirmed Appointments [/api/v1/calendar/appointment/]
+## Confirmed Appointments [/api/v1/calendar/appointment?start={start}&end={end}]
 ### Get all confirmed appointments [GET]
++ Parameters
+    + start (optional, date)
+    + end (optional, date)
 + Response 200 (application/json)
 
         {
