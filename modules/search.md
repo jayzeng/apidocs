@@ -1,10 +1,7 @@
 # Group Search
 
-## Search [/v1/search/{?Content-Type}]
+## Search [/v1/search/]
 
-+ Parameters
-
-    + Content-Type (string) ... Typically 'application/json'
 
 + Model (application/json)
 
