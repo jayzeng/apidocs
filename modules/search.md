@@ -5,10 +5,6 @@
 
 + Model (application/json)
 
-    + Headers
-        
-        Content-Type: application/json
-
     + Body
    
          {
@@ -155,14 +151,14 @@
 
 
 
-## Search Suggest [/v1/search/suggest{?query}]
+## Search Suggest [/v1/search/suggest?{query}/]
 
 + Parameters
     
-    + query (string) ... The first letters of a city name [minimum 3] 
+    + query (required, string, 'was') ... The beginning letters of a city name [minimum 3] 
 
 + Model (application/json)
-
+    
     + Body
         
         {
@@ -228,6 +224,6 @@
 
 + Response 200
 
-    [Search][]
+    [Search Suggest][]
 
 
