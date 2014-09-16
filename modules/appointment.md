@@ -237,17 +237,18 @@
 
 ### Request an appointment [POST]
 + Request (application/json)
-    {
-        "manager_id": 1,
-        "renter_id": 2,
-        "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
-        "timezone": "US/Pacific",
-        "start_time": "2014-10-13 10:00",
-        "end_time": "2014-10-13 12:00",
-        "type": "tour",
-        "manager_notes": "A note from the manager" (optional),
-        "renter_notes": "Some renter written writings" (optional)
-    }
+
+        {
+            "manager_id": 1,
+            "renter_id": 2,
+            "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+            "timezone": "US/Pacific",
+            "start_time": "2014-10-13 10:00",
+            "end_time": "2014-10-13 12:00",
+            "type": "tour",
+            "manager_notes": "A note from the manager" (optional),
+            "renter_notes": "Some renter written writings" (optional)
+        }
 
 + Response 201 (application/json)
     [Appointment][]
@@ -273,7 +274,7 @@
 + Response 200
     [Confirm][]
 
-## Visit [/appointments/{id}/confirm]
+## Visit [/appointments/{id}/visit]
 + Parameters
     id (string) ... ID of the appointment
 + Model
@@ -289,4 +290,4 @@
 
 ### Check if an appointment has been visited [GET]
 + Response 200
-    [Confirm][]
+    [Visit][]
