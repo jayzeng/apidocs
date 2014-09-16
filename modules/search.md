@@ -1,12 +1,16 @@
 # Group Search
 
-## Search [/v1/seach/{?Content-Type}]
+## Search [/v1/search/{?Content-Type}]
 
 + Parameters
 
     + Content-Type (string) ... Typically 'application/json'
 
 + Model (application/json)
+
+    + Headers
+        
+        Content-Type: application/json
 
     + Body
    
@@ -94,19 +98,19 @@
                         "property_type": "House"
                       },
                       "photos": [
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/535d8d6f-f39d-48d8-9782-7e35ba261fbd/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/60177a25-8f1b-40a4-ad92-c1a417bfba62/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/6321346b-120d-4ad5-b5d8-d1e8912ac00e/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/f13679ad-ee7f-4145-9e63-ac5f4dff8038/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/3466a9c9-cce4-4b80-8b1b-b59566eeacaa/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/d9e77424-3ebf-4469-8255-a71b9ae47786/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/2cdf758a-1ea6-442b-ad7c-3e71258cc6c6/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/ec10bdfd-ff24-427c-be15-7671a658612f/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/9ca680a0-aa8d-4642-98ec-23bdd81a5d41/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/89390baa-b292-4f23-a35a-ed7eee4da042/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/497d8bce-c4c2-48a3-96ae-7e02287e625e/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/a79a7a09-01d6-4446-8690-a769b69af102/medium.jpg",
-                        "https://pa.cdn.appfolio.com/fresnomanagement/images/397958b4-aa64-4a21-8d0e-3d800bf20bcb/medium.jpg"
+                        "https://photos.knockrentals.com/535d8d6f-f39d-48d8-9782-7e35ba261fbd/medium.jpg",
+                        "https://photos.knockrentals.com/60177a25-8f1b-40a4-ad92-c1a417bfba62/medium.jpg",
+                        "https://photos.knockrentals.com/6321346b-120d-4ad5-b5d8-d1e8912ac00e/medium.jpg",
+                        "https://photos.knockrentals.com/f13679ad-ee7f-4145-9e63-ac5f4dff8038/medium.jpg",
+                        "https://photos.knockrentals.com/3466a9c9-cce4-4b80-8b1b-b59566eeacaa/medium.jpg",
+                        "https://photos.knockrentals.com/d9e77424-3ebf-4469-8255-a71b9ae47786/medium.jpg",
+                        "https://photos.knockrentals.com/2cdf758a-1ea6-442b-ad7c-3e71258cc6c6/medium.jpg",
+                        "https://photos.knockrentals.com/ec10bdfd-ff24-427c-be15-7671a658612f/medium.jpg",
+                        "https://photos.knockrentals.com/9ca680a0-aa8d-4642-98ec-23bdd81a5d41/medium.jpg",
+                        "https://photos.knockrentals.com/89390baa-b292-4f23-a35a-ed7eee4da042/medium.jpg",
+                        "https://photos.knockrentals.com/497d8bce-c4c2-48a3-96ae-7e02287e625e/medium.jpg",
+                        "https://photos.knockrentals.com/a79a7a09-01d6-4446-8690-a769b69af102/medium.jpg",
+                        "https://photos.knockrentals.com/397958b4-aa64-4a21-8d0e-3d800bf20bcb/medium.jpg"
                       ],
                       "promotions": "",
                       "social_urls": []
