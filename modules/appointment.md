@@ -1,6 +1,6 @@
 # Group Appointments
 
-## Appointment [/appointments/{id}]
+## Appointment [/v1/appointments/{id}]
 + Parameters
     + id (string) ... ID of the appointment
 + Model (application/json)
@@ -65,7 +65,7 @@
 ### Cancel a single Appointment [DELETE]
 + Response 204
 
-## Appointments Collection [/appointments{?status,start,end}]
+## Appointments Collection [/v1/appointments{?status,start,end}]
 + Model (application/json)
     + Body
 
@@ -253,7 +253,7 @@
 + Response 201 (application/json)
     [Appointment][]
 
-## Confirm [/appointments/{id}/confirm]
+## Confirm [/v1/appointments/{id}/confirm]
 + Parameters
     id (string) ... ID of the appointment
 + Model
@@ -274,7 +274,7 @@
 + Response 200
     [Confirm][]
 
-## Visit [/appointments/{id}/visit]
+## Visit [/v1/appointments/{id}/visit]
 + Parameters
     id (string) ... ID of the appointment
 + Model
