@@ -252,17 +252,18 @@ Authenticating users through the **Knock API**
 
 ### Request an appointment [POST]
 + Request (application/json)
-    {
-        "manager_id": 1,
-        "renter_id": 2,
-        "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
-        "timezone": "US/Pacific",
-        "start_time": "2014-10-13 10:00",
-        "end_time": "2014-10-13 12:00",
-        "type": "tour",
-        "manager_notes": "A note from the manager" (optional),
-        "renter_notes": "Some renter written writings" (optional)
-    }
+
+        {
+            "manager_id": 1,
+            "renter_id": 2,
+            "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+            "timezone": "US/Pacific",
+            "start_time": "2014-10-13 10:00",
+            "end_time": "2014-10-13 12:00",
+            "type": "tour",
+            "manager_notes": "A note from the manager" (optional),
+            "renter_notes": "Some renter written writings" (optional)
+        }
 
 + Response 201 (application/json)
     [Appointment][]
@@ -288,7 +289,7 @@ Authenticating users through the **Knock API**
 + Response 200
     [Confirm][]
 
-## Visit [/appointments/{id}/confirm]
+## Visit [/appointments/{id}/visit]
 + Parameters
     id (string) ... ID of the appointment
 + Model
@@ -304,15 +305,15 @@ Authenticating users through the **Knock API**
 
 ### Check if an appointment has been visited [GET]
 + Response 200
-    [Confirm][]
+    [Visit][]
 # Group Health
-## Health Check [api/v1/system/health/check/]
+## Health Check [/v1/system/health/check/]
 ### Get health check [GET]
 + Response 200
 ```
     "superman wears chuck norris underwear"
 ```
-## Health Details [api/v1/system/health/details/]
+## Health Details [/v1/system/health/details/]
 ### Get health details [GET]
 + Response 200 (application/json)
 ```
@@ -322,7 +323,7 @@ Authenticating users through the **Knock API**
     }
 ```
 # Group Manager
-## Manager [/api/v1/manager/]
+## Manager [/v1/manager/]
 ### Get this manager [GET]
 + Request
     + Header
@@ -342,7 +343,7 @@ Authenticating users through the **Knock API**
             }
         }
 
-## Manager Info [/api/v1/manager/info]
+## Manager Info [/v1/manager/info]
 ### Get this manager's info [GET]
 + Request
     + Header
@@ -392,7 +393,7 @@ Authenticating users through the **Knock API**
                 "manager_info": 1
             }
 
-## Manager Preferences [/api/v1/manager/preferences]
+## Manager Preferences [/v1/manager/preferences]
 ### Get this manager's preferences [GET]
 + Request
     + Header

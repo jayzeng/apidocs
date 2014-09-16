@@ -1,5 +1,5 @@
 # Group Manager
-## Manager [/api/v1/manager/]
+## Manager [/v1/manager/]
 ### Get this manager [GET]
 + Request
     + Header
@@ -19,7 +19,7 @@
             }
         }
 
-## Manager Info [/api/v1/manager/info]
+## Manager Info [/v1/manager/info]
 ### Get this manager's info [GET]
 + Request
     + Header
@@ -69,7 +69,7 @@
                 "manager_info": 1
             }
 
-## Manager Preferences [/api/v1/manager/preferences]
+## Manager Preferences [/v1/manager/preferences]
 ### Get this manager's preferences [GET]
 + Request
     + Header
