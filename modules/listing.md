@@ -123,7 +123,7 @@
 
 + Response 200
 	
-	[Listing Openhose][]
+	[Listing Openhouse][]
 	
 ## Listing Calendar [/v1/listing/{listing_id}/calendar{?start}{&end}/]
  
