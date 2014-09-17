@@ -151,7 +151,7 @@
 
 
 
-## Search Suggest [/v1/search/suggest?{query}/]
+## Search Suggest [/v1/search/suggest{?query}/]
 
 + Parameters
     

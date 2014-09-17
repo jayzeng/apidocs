@@ -1,6 +1,6 @@
 # Group Listing
 
-## Listing [/v1/listing/<listing_id>/]
+## Listing [/v1/listing/{listing_id}/]
 
 
 + Model (application/json)
@@ -109,7 +109,7 @@
 	[Listing][]        
 
 
-## Listing Openhouse [/v1/listing/<listing_id>/openhouse/]
+## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
 
 + Model (application/json)
 		
@@ -125,7 +125,7 @@
 	
 	[Listing Openhose][]
 	
-## Listing Calendar [/v1/listing/<listing_id>/calendar?{start}&{end}/]
+## Listing Calendar [/v1/listing/{listing_id}/calendar{?start}{&end}/]
  
 + Parameters
 	
