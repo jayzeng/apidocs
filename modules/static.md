@@ -283,19 +283,3 @@
 + Response 200
 
 	[Sitemap][]
-
-## Default [/]
-
-+ Model (application/json)
-
-	+ Body
-	
-		{
-		  "message": "Z2V0IHRoZSBoZWxsIG91dCBvZiBoZXJl"
-		}
-
-### Get default [GET]
-
-+ Response 200
-
-	[Default][]
