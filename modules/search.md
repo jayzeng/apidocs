@@ -158,7 +158,7 @@
     + query (required, string, 'was') ... The beginning letters of a city name [minimum 3] 
 
 + Model (application/json)
-    
+
     + Body
         
         {

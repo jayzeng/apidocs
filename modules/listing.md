@@ -2,7 +2,6 @@
 
 ## Listing [/v1/listing/{listing_id}/]
 
-
 + Model (application/json)
 		
 	+ Body
@@ -107,7 +106,6 @@
 + Response 200 (application/json)
 
 	[Listing][]        
-
 
 ## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
 
