@@ -1,7 +1,6 @@
 # Group Manager
 ## Manager [/v1/manager/]
 ### Get this manager [GET]
-
 + Response 200 (application/json)
 
         {
@@ -11,45 +10,46 @@
                 "is_active": true,
                 "modified_time": "Wed, 03 Sep 2014 06:41:48 GMT",
                 "provider": "knock",
-                "username": "daniel@knockrentals.com"
+                "username": "spock@enterprise.com"
             }
         }
 
 ## Manager Info [/v1/manager/info]
 ### Get this manager's info [GET]
-
 + Response 200 (application/json)
 
         {
             "manager_info": {
-                "bio": "Doesn't like turtlenecks",
-                "email": "fatisar@gmail.com",
-                "first_name": "Daniel",
-                "job_title": "Developer",
-                "last_name": "Sarfati",
+                "bio": "I'm a doctor Jim",
+                "email": "mccoy@enterprise.com",
+                "first_name": "Leonard",
+                "job_title": "Doctor",
+                "last_name": "McCoy",
                 "manager_id": 1,
-                "phone": "210-216-6887",
-                "photo": "steelydan.jpeg",
+                "phone": "206-333-2222",
+                "photo": null,
                 "verification_method": "text"
             }
         }
 
 ### Update this manager's info [POST]
++ Request
 
     + Body
 
             {
-                "bio": "Doesn't like turtlenecks",
-                "email": "fatisar@gmail.com",
-                "first_name": "Daniel",
-                "job_title": "Developer",
-                "last_name": "Sarfati",
-                "phone": "210-216-6887",
-                "photo": "steelydan.jpeg",
+                "bio": "Still a doctor",
+                "email": "mccoy@enterprise.com",
+                "first_name": "Leonard",
+                "job_title": "Doctor",
+                "last_name": "McCoy",
+                "phone": "206-222-3333",
+                "photo": null,
                 "verification_method": "text"
             }
 
 + Response 201 (application/json)
+    
     + Body
 
             {
@@ -58,7 +58,6 @@
 
 ## Manager Preferences [/v1/manager/preferences]
 ### Get this manager's preferences [GET]
-
 + Response 200 (application/json)
 
         {
@@ -84,6 +83,7 @@
             }
    
 + Response 201 (application/json)
+    
     + Body
 
             {
