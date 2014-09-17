@@ -437,41 +437,42 @@ Authenticating users through the **Knock API**
 ## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
 
 + Model (application/json)
-		
+
     + Body
 
     {
         open_houses: [ ]
     }
-		
+
 ### Get listing's openhouses [GET]
 
 + Response 200
-	
+
     [Listing Openhouse][]
-	
+
 ## Listing Calendar [/v1/listing/{listing_id}/calendar{?start,end}/]
  
 + Parameters
-	
+
     + start (required, string, '2014-09-01T09:00-07:00') ... Timestamp in ISO 8601 for beginning of calendar period
 
     + end (required, string, '2014-10-13T13:00-07:00') ... Timestamp in ISO 8601 for end of calendar period
 
 + Model (application/json)
-	
+
     + Body
-	
+
     {
         appointments: [ ]
         open_houses: [ ]
     }
-		
+
 ### Get listing's calendar [GET]
 
 + Response 200
-	
+
     [Listing Calendar][]
+
 # Group Manager
 ## Manager [/v1/manager/]
 ### Get this manager [GET]
@@ -605,81 +606,82 @@ Work in progress
 
 + model (application/json)
 
-	+ Body
-	
-		{
-		  "result": [
-		    {
-		      "created_time": "2014-09-04T16:51:02.715980+00:00",
-		      "id": 1,
-		      "is_active": true,
-		      "modified_time": "2014-09-04T16:51:02.715980+00:00",
-		      "provider": "knock",
-		      "social_provider_id": null,
-		      "username": "spock@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-04T17:02:25.531546+00:00",
-		      "id": 2,
-		      "is_active": true,
-		      "modified_time": "2014-09-04T17:02:25.531546+00:00",
-		      "provider": "knock",
-		      "social_provider_id": null,
-		      "username": "kirk@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-04T18:06:45.016349+00:00",
-		      "id": 3,
-		      "is_active": true,
-		      "modified_time": "2014-09-04T18:06:45.016349+00:00",
-		      "provider": "knock",
-		      "social_provider_id": null,
-		      "username": "mccoy@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-06T21:06:11.369480+00:00",
-		      "id": 4,
-		      "is_active": true,
-		      "modified_time": "2014-09-06T21:06:11.369480+00:00",
-		      "provider": "linkedin",
-		      "social_provider_id": "F89ce7D3CC",
-		      "username": "uhura@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-06T21:27:09.338640+00:00",
-		      "id": 5,
-		      "is_active": true,
-		      "modified_time": "2014-09-06T21:27:09.338640+00:00",
-		      "provider": "facebook",
-		      "social_provider_id": "123412348094234",
-		      "username": "scott@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-12T01:09:51.753075+00:00",
-		      "id": 6,
-		      "is_active": true,
-		      "modified_time": "2014-09-12T01:09:51.753075+00:00",
-		      "provider": "facebook",
-		      "social_provider_id": "9824234091234234",
-		      "username": "sulu@enterprise.com"
-		    },
-		    {
-		      "created_time": "2014-09-16T17:29:54.926851+00:00",
-		      "id": 7,
-		      "is_active": true,
-		      "modified_time": "2014-09-16T17:29:54.926851+00:00",
-		      "provider": "knock",
-		      "social_provider_id": null,
-		      "username": "chekov@enterprise.com"
-		    }
-		  ]
-		}
+    + Body
+
+        {
+          "result": [
+            {
+              "created_time": "2014-09-04T16:51:02.715980+00:00",
+              "id": 1,
+              "is_active": true,
+              "modified_time": "2014-09-04T16:51:02.715980+00:00",
+              "provider": "knock",
+              "social_provider_id": null,
+              "username": "spock@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-04T17:02:25.531546+00:00",
+              "id": 2,
+              "is_active": true,
+              "modified_time": "2014-09-04T17:02:25.531546+00:00",
+              "provider": "knock",
+              "social_provider_id": null,
+              "username": "kirk@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-04T18:06:45.016349+00:00",
+              "id": 3,
+              "is_active": true,
+              "modified_time": "2014-09-04T18:06:45.016349+00:00",
+              "provider": "knock",
+              "social_provider_id": null,
+              "username": "mccoy@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-06T21:06:11.369480+00:00",
+              "id": 4,
+              "is_active": true,
+              "modified_time": "2014-09-06T21:06:11.369480+00:00",
+              "provider": "linkedin",
+              "social_provider_id": "F89ce7D3CC",
+              "username": "uhura@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-06T21:27:09.338640+00:00",
+              "id": 5,
+              "is_active": true,
+              "modified_time": "2014-09-06T21:27:09.338640+00:00",
+              "provider": "facebook",
+              "social_provider_id": "123412348094234",
+              "username": "scott@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-12T01:09:51.753075+00:00",
+              "id": 6,
+              "is_active": true,
+              "modified_time": "2014-09-12T01:09:51.753075+00:00",
+              "provider": "facebook",
+              "social_provider_id": "9824234091234234",
+              "username": "sulu@enterprise.com"
+            },
+            {
+              "created_time": "2014-09-16T17:29:54.926851+00:00",
+              "id": 7,
+              "is_active": true,
+              "modified_time": "2014-09-16T17:29:54.926851+00:00",
+              "provider": "knock",
+              "social_provider_id": null,
+              "username": "chekov@enterprise.com"
+            }
+          ]
+        }
 
 ### Get renters [GET]
 
 + Response 200
 
-	[Renters][]
+    [Renters][]
+
 # Group Search
 
 ## Search [/v1/search/]
@@ -916,282 +918,281 @@ Work in progress
 
 + Model (application/json)
 
-	+ Body
-
-		{
-		  "routes": [
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/system/health/details"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/system/health/check"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/calendar/request/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/calendar/request/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/preferences/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/preferences/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/openhouse/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/openhouse/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/calendar/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/listing/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/listing/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/hours/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/hours/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/info/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/info/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/search/suggest/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/auth/register"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/auth/validate"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/auth/facebook"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/auth/linkedin"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/profile/"
-		    },
-		    {
-		      "methods": [
-		        "PUT",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/profile/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "POST",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/renters"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/sitemap"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/search/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/"
-		    },
-		    {
-		      "methods": [
-		        "POST",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/calendar/request/<request_id>/status"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/openhouse/<open_house_id>"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/manager/listing/<listing_id>"
-		    },
-		    {
-		      "methods": [
-		        "PUT",
-		        "OPTIONS"
-		      ],
-		      "name": "/v1/manager/listing/<listing_id>"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/listing/<listing_id>/openhouse/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/listing/<listing_id>/calendar/"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/v1/listing/<listing_id>"
-		    },
-		    {
-		      "methods": [
-		        "HEAD",
-		        "OPTIONS",
-		        "GET"
-		      ],
-		      "name": "/static/<path:filename>"
-		    }
-		  ]
-		}
+    + Body
+        {
+          "routes": [
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/system/health/details"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/system/health/check"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/calendar/request/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/calendar/request/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/preferences/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/preferences/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/openhouse/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/openhouse/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/calendar/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/listing/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/listing/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/hours/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/hours/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/info/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/info/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/search/suggest/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/auth/register"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/auth/validate"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/auth/facebook"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/auth/linkedin"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/profile/"
+            },
+            {
+              "methods": [
+                "PUT",
+                "OPTIONS"
+              ],
+              "name": "/v1/profile/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "POST",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/renters"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/sitemap"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/search/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/"
+            },
+            {
+              "methods": [
+                "POST",
+                "OPTIONS"
+              ],
+              "name": "/v1/calendar/request/<request_id>/status"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/openhouse/<open_house_id>"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/manager/listing/<listing_id>"
+            },
+            {
+              "methods": [
+                "PUT",
+                "OPTIONS"
+              ],
+              "name": "/v1/manager/listing/<listing_id>"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/listing/<listing_id>/openhouse/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/listing/<listing_id>/calendar/"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/v1/listing/<listing_id>"
+            },
+            {
+              "methods": [
+                "HEAD",
+                "OPTIONS",
+                "GET"
+              ],
+              "name": "/static/<path:filename>"
+            }
+          ]
+        }
 
 ### Get sitemap [GET]
 
 + Response 200
 
-	[Sitemap][]
+    [Sitemap][]
