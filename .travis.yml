@@ -7,4 +7,5 @@ before_script:
     - gem install mdl
 
 script:
+# '-r' MD010 is the flag to only check for hard tabs
     - mdl -r MD010 modules/*.md
