@@ -1,10 +1,6 @@
 # Group Manager
 ## Manager [/v1/manager/]
 ### Get this manager [GET]
-+ Request
-    + Header
-
-            Authorization: Bearer <manager-token>
 
 + Response 200 (application/json)
 
@@ -21,10 +17,6 @@
 
 ## Manager Info [/v1/manager/info]
 ### Get this manager's info [GET]
-+ Request
-    + Header
-
-            Authorization: Bearer <manager-token>
 
 + Response 200 (application/json)
 
@@ -43,11 +35,6 @@
         }
 
 ### Update this manager's info [POST]
-+ Request
-    + Header
-
-            Content-Type: application/json
-            Authorization: Bearer <manager-token>
 
     + Body
 
@@ -71,10 +58,6 @@
 
 ## Manager Preferences [/v1/manager/preferences]
 ### Get this manager's preferences [GET]
-+ Request
-    + Header
-
-            Authorization: Bearer <manager-token>
 
 + Response 200 (application/json)
 
@@ -90,10 +73,7 @@
 
 ### Update this manager's preferences [POST]
 + Request
-    + Header
 
-            Content-Type: application/json
-            Authorization: Bearer <manager-token>
     + Body
 
             {
@@ -102,6 +82,7 @@
                 "adjacent_showing_interval": 15,
                 "income_requirement_multiplier": 1.5
             }
+   
 + Response 201 (application/json)
     + Body
 
