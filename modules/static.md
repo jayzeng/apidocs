@@ -2,10 +2,10 @@
 
 ## Sitemap [/v1/sitemap/]
 
-+ model (application/json)
++ Model (application/json)
 
 	+ Body
-	
+
 		{
 		  "routes": [
 		    {
@@ -277,7 +277,7 @@
 		    }
 		  ]
 		}
-		
+
 ### Get sitemap [GET]
 
 + Response 200
