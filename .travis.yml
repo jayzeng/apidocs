@@ -1,0 +1,10 @@
+language: ruby
+
+rvm:
+    - "1.9.3"
+
+before_script:
+    - gem install mdl
+
+script:
+    - mdl -r MD010 modules/*.md
