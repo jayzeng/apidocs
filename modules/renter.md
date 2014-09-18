@@ -4,8 +4,8 @@
 
 + model (application/json)
 
-        + Body
-        
+    + Body
+
         {
           "result": [
             {

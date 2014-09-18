@@ -255,7 +255,7 @@
 
 ## Confirm [/v1/appointments/{id}/confirm]
 + Parameters
-    id (string) ... ID of the appointment
+    + id (string) ... ID of the appointment
 + Model
 
         {
@@ -276,7 +276,7 @@
 
 ## Visit [/v1/appointments/{id}/visit]
 + Parameters
-    id (string) ... ID of the appointment
+    + id (string) ... ID of the appointment
 + Model
 
         {
