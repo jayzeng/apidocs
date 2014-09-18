@@ -10,6 +10,7 @@ before_script:
     - ./configure
     - make snowcrash
     - sudo make install
+    - cd ..
 
 script:
     # '-r' MD010 is the flag to only check for hard tabs
