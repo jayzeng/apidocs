@@ -3,13 +3,13 @@
 ### Get health check [GET]
 + Response 200
 
-    "superman wears chuck norris underwear"
-    
+        "superman wears chuck norris underwear"
+
 ## Health Details [/v1/system/health/details/]
 ### Get health details [GET]
 + Response 200 (application/json)
 
-    {
-        "database": true,
-        "elasticsearch": true
-    }
+        {
+            "database": true,
+            "elasticsearch": true
+        }
