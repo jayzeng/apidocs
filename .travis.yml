@@ -1,18 +1,18 @@
 language: ruby
-
 rvm:
-    - "1.9.3"
-
+- 1.9.3
 before_script:
-    - gem install mdl
-    - git clone --recursive git://github.com/apiaryio/snowcrash.git
-    - cd snowcrash
-    - ./configure
-    - make snowcrash
-    - sudo make install
-    - cd ..
-
+- gem install mdl
+- git clone --recursive git://github.com/apiaryio/snowcrash.git
+- cd snowcrash
+- "./configure"
+- make snowcrash
+- sudo make install
+- cd ..
 script:
-    # '-r' MD010 is the flag to only check for hard tabs
-    - mdl -r MD010 modules/*.md
-    - snowcrash -l apiary.apib
+- mdl -r MD010 modules/*.md
+- snowcrash -l apiary.apib
+notifications:
+  hipchat:
+    rooms:
+      secure: duSsfCYwjzvqfYagYXQgnTBwUP6LG9ys2m9JgBZoIgSjGLY74FhUXaNKsoQBWo7bQNvgz9YLfpuXzGn7yIV73Ldixyd1UC6RqQrGZLWb8OFzR7f8L+4wgR9LtL9XYw46kHJJuSU1jp8iUPLaM0dxPB5LZ/ZMeDSoFy1cd8mznN8=
