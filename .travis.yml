@@ -15,4 +15,7 @@ script:
 notifications:
   hipchat:
     rooms:
-      secure: duSsfCYwjzvqfYagYXQgnTBwUP6LG9ys2m9JgBZoIgSjGLY74FhUXaNKsoQBWo7bQNvgz9YLfpuXzGn7yIV73Ldixyd1UC6RqQrGZLWb8OFzR7f8L+4wgR9LtL9XYw46kHJJuSU1jp8iUPLaM0dxPB5LZ/ZMeDSoFy1cd8mznN8=
+      secure: nM3FjBx1jDvDHrNLXBs81X2IA+jXeIrkWFnV3498s8D3qqfrZAHwJEjEGr0VGu4JmfFdyAAVXCq6jG/gk+XzRjUEmofs+/pv0j5Jx1n2QcG4LcJVmnrQdZyi5hFZGYkIADzYkrKFIKRgnOUSf3jxfof4sgX6kPOgvFI6fVVbX5o=
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
+    format: html
