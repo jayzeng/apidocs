@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+- 1.9.3
+before_script:
+- gem install mdl
+- git clone --recursive git://github.com/apiaryio/snowcrash.git
+- cd snowcrash
+- "./configure"
+- make snowcrash
+- sudo make install
+- cd ..
+script:
+- mdl -r MD010 modules/*.md
+- snowcrash -l apiary.apib
+notifications:
+  hipchat:
+    rooms:
+      secure: nM3FjBx1jDvDHrNLXBs81X2IA+jXeIrkWFnV3498s8D3qqfrZAHwJEjEGr0VGu4JmfFdyAAVXCq6jG/gk+XzRjUEmofs+/pv0j5Jx1n2QcG4LcJVmnrQdZyi5hFZGYkIADzYkrKFIKRgnOUSf3jxfof4sgX6kPOgvFI6fVVbX5o=
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
+    format: html
