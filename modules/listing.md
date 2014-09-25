@@ -3,9 +3,9 @@
 ## Listing [/v1/listing/{listing_id}/]
 
 + Model (application/json)
-		
+
 	+ Body
-	
+
 		{
 		  "listings": {
 		    "amenities": {
@@ -105,43 +105,60 @@
 
 + Response 200 (application/json)
 
-	[Listing][]        
+	[Listing][]
 
 ## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
 
 + Model (application/json)
-		
+
 	+ Body
-	
+
 		{
 			open_houses: [ ]
 		}
-		
+
 ### Get listing's openhouses [GET]
 
 + Response 200
-	
+
 	[Listing Openhouse][]
-	
+
 ## Listing Calendar [/v1/listing/{listing_id}/calendar{?start,end}/]
- 
+
 + Parameters
-	
+
 	+ start (required, string, '2014-09-01T09:00-07:00') ... Timestamp in ISO 8601 for beginning of calendar period
-	
+
 	+ end (required, string, '2014-10-13T13:00-07:00') ... Timestamp in ISO 8601 for end of calendar period
 
 + Model (application/json)
-	
+
 	+ Body
-	
+
 		{
-			appointments: [ ]
-			open_houses: [ ]
+			appointments: [ ],
+			open_houses: [ ],
+			availableTimes: [
+				'2014-09-25T09:00-07:00',
+				'2014-09-25T09:15-07:00',
+				'2014-09-25T10:00-07:00',
+				'2014-09-25T10:30-07:00',
+				'2014-09-25T13:15-07:00',
+				'2014-09-26T09:00-07:00',
+				'2014-09-26T11:45-07:00',
+				'2014-09-26T16:00-07:00',
+				'2014-09-27T09:00-07:00',
+				'2014-09-27T10:45-07:00',
+				'2014-09-27T14:00-07:00',
+				'2014-09-27T15:15-07:00',
+				'2014-09-28T08:15-07:00',
+				'2014-09-28T08:45-07:00',
+				'2014-09-28T12:30-07:00'
+			]
 		}
-		
+
 ### Get listing's calendar [GET]
 
 + Response 200
-	
+
 	[Listing Calendar][]
