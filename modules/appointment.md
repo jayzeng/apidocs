@@ -117,6 +117,7 @@
                     "promotions": "",
                     "social_urls": []
                 }
+            }
 
 ### Retrieve a single Appointment [GET]
 + Response 200
