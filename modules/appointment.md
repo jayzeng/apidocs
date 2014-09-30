@@ -89,7 +89,7 @@
 
 ### List all Appointments [GET]
 + Parameters
-    + status (optional, string) .. Status identifier. Valid values are 'requested', 'confirmed', or 'visited'. Only appointments with the provided state are returned./
+    + status (optional, string) .. Status identifier. Valid values are 'requested', 'confirmed', 'rejected, 'canceled', or 'visited'. Only appointments with the provided state are returned./
     + start (optional, string) ... ISO timestamp. Only appointments that start on or after this date are returned.
     + end (optional, string) ... ISO timestamp. Only appointments that end on or before this date are returned.
 + Response 200
@@ -107,7 +107,8 @@
             "end_time": "2014-10-13 12:00",
             "type": "tour",
             "manager_notes": "A note from the manager" (optional),
-            "renter_notes": "Some renter written writings" (optional)
+            "renter_notes": "Some renter written writings" (optional),
+            "status": "accepted"
         }
 
 + Response 201 (application/json)
