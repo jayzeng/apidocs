@@ -108,7 +108,7 @@
             "type": "tour",
             "manager_notes": "A note from the manager" (optional),
             "renter_notes": "Some renter written writings" (optional),
-            "status": "accepted"
+            "status": "confirmed"
         }
 
 + Response 201 (application/json)
