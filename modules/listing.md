@@ -137,8 +137,53 @@
 
         {
             "appointments": [ ],
-            "open_houses": [ ],
-            "availableTimes": [
+            "open_houses": [ ]
+        }
+
+### Get listing's calendar [GET]
+
++ Response 200
+
+    [Listing Calendar][]
+
+## Listing Available Times [/v1/listing/{listing_id}/availableTimes{?start,end}/]
+
++ Parameters
+
+    + start (required, string, '2014-09-01T09:00-07:00') ... Timestamp in ISO 8601 for beginning of schedule period
+
+    + end (required, string, '2014-10-13T13:00-07:00') ... Timestamp in ISO 8601 for end of schedule period
+
++ Model (application/json)
+
+    + Body
+
+        {
+            "open_houses": [
+                {
+                    "id": 1,
+                    "time_slots": [
+                        "2014-09-25T16:00-07:00",
+                        "2014-09-25T16:15-07:00",
+                        "2014-09-25T16:30-07:00",
+                        "2014-09-25T16:45-07:00",
+                        "2014-09-25T17:00-07:00",
+                        "2014-09-25T17:15-07:00",
+                    ]
+                },
+                {
+                    "id": 2,
+                    "time_slots": [
+                        "2014-09-26T16:00-07:00",
+                        "2014-09-26T16:15-07:00",
+                        "2014-09-26T16:30-07:00",
+                        "2014-09-26T16:45-07:00",
+                        "2014-09-26T17:00-07:00",
+                        "2014-09-26T17:15-07:00",
+                    ]
+                }
+            ],
+            "available_times": [
                 "2014-09-25T09:00-07:00",
                 "2014-09-25T09:15-07:00",
                 "2014-09-25T10:00-07:00",
@@ -156,9 +201,9 @@
                 "2014-09-28T12:30-07:00"
             ]
         }
-
-### Get listing's calendar [GET]
+        
+### Get listing's available times [GET]
 
 + Response 200
 
-    [Listing Calendar][]
+    [Listing Available Times][]
