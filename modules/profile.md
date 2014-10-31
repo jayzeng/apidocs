@@ -1,10 +1,7 @@
 # Group Profile
-
 ## Profile [/v1/profile/]
-
-+ Model (application/json)
-
-    + Body
+### Get Profile [GET]
++ Response 200 (application/json)
 
         {
             "profile": {
@@ -22,13 +19,33 @@
             }
         }
 
-### Get Profile [GET]
+### Save Profile [PUT]
++ Request (application/json)
 
-+ Response 200
+        {
+            'password': 'qwerty43',
+            'first_name': 'John',
+            'last_name': 'Smith',
+            'email': 'johnsmith@email.com',
+            'credit_score': '3',
+            'monthly_income': '40000',
+            'phone': {
+                'npa': '206',
+                'nxx': '111',
+                'xxxx': '2222'
+            },
+            'pets': {
+                'dogs': '',
+                'cats': ''
+            },
+            'co_tenants': 3,
+            'target_move_date': '05/11/2014',
+            'photo': '',
+            'bio': 'I have a beard'
+        }
 
-    [Profile][]
++ Response 201 (application/json)
 
-### Put Profile [PUT]
-
-    Work in progress
-
+        {
+            'profile_id': 'ecc55hpp275pc3sm'
+        }

@@ -1,10 +1,7 @@
 # Group Renters
-
 ## Renters [/v1/renters/]
-
-+ model (application/json)
-
-    + Body
+### Get renters [GET]
++ Response 200
 
             {
               "result": [
@@ -74,8 +71,48 @@
               ]
             }
 
-### Get renters [GET]
 
-+ Response 200
 
-    [Renters][]
+## Renter [/v1/renter/{renter_id}]
+### Get Renter [GET]
++ Parameters
+    + renter_id (required, string, 'ecc55hpp275pc3sm') ... Unique renter ID
+
++ Response 200 (application/json)
+    
+        {
+            'renter': {
+                "created_time": "2014-09-16T17:29:54.926851+00:00",
+                "id": 7,
+                "is_active": true,
+                "modified_time": "2014-09-16T17:29:54.926851+00:00",
+                "provider": "knock",
+                "social_provider_id": null,
+                "username": "chekov@enterprise.com"
+            } 
+        }
+
+
+## Renter Info [/v1/renter/{renter_id}/info
+### Get Renter Info
++ Parameters
+    + renter_id (required, string, 'ecc55hpp275pc3sm') ... Unique renter ID
+
++ Response 200 (application/json)
+
+          {
+               "renter_info": {
+                   "bio": "Explore strange new worlds",
+                   "co_tenants": 4,
+                   "email": "kirk@enterprise.com",
+                   "first_name": "Tiberius",
+                   "income": "100000",
+                   "job_title": "Captain",
+                   "last_name": "Kirk",
+                   "phone": "(206)765-4321",
+                   "photo": null,
+                   "renter_id": 8,
+                   "verification_method": null
+               }            
+          }
+
