@@ -1,9 +1,7 @@
 # Group Search
 
 ## Search [/v1/search/]
-
 + Model (application/json)
-
     + Body
    
              {
@@ -150,13 +148,10 @@
 
 
 ## Search Suggest [/v1/search/suggest{?query}/]
-
 + Parameters
- 
     + query (required, string, `was`) ... The beginning letters of a city name [minimum 3] 
 
 + Model (application/json)
-
     + Body
         
             {
@@ -219,9 +214,42 @@
             }
 
 ### Get search suggestion [GET]
-
 + Response 200
-
     [Search Suggest][]
 
 
+## Search Context [/v1/search/context/{city_id}]
+### Get Search Context [GET]
++ Parameters
+    + city_id (required, string, `falkner_ms`) ... Unique city ID 
+
++ Response 200 (application/json)
+
+            {
+                'city': 'spokane',
+                'shape': [
+                    [-88.964918, 34.829735],
+                    [-88.964918, 34.83021],
+                    [-88.964918, 34.83373],
+                    [-88.964878, 34.837811]
+                ]
+            }
+
+
+## Search Shapes [/v1/search/shapes/{shape_type}/{shape_id}]
+### Get Shape [GET]
++ Parameters
+    + shape_type (required, string, `Polygon`) ... Shape type
+    + shape_id (required, string, `falkner_ms`) ... Shape ID
+
++ Response 200 (application/json)
+
+            {                                          
+                'city': 'spokane',
+                'shape': [
+                    [-88.964918, 34.829735],
+                    [-88.964918, 34.83021],
+                    [-88.964918, 34.83373],
+                    [-88.964878, 34.837811]
+                ]
+            }

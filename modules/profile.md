@@ -1,4 +1,5 @@
 # Group Profile
+
 ## Profile [/v1/profile/]
 ### Get Profile [GET]
 + Response 200 (application/json)
