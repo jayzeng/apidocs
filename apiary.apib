@@ -16,9 +16,10 @@ Authenticating users through the **Knock API**
 
 # Group Appointments
 
-## Appointment [/v1/appointments/{id}]
+## Appointment [/v1/appointments/{appointment_id}]
 + Parameters
-    + id (string) ... ID of the appointment
+    + appointment_id (required, string, `14`) ... ID of the appointment
+
 + Model (application/json)
     + Body
 
@@ -27,17 +28,7 @@ Authenticating users through the **Knock API**
                 "end_time": "2014-09-08T08:00:00-07:00",
                 "id": 2,
                 "is_active": true,
-                "manager_info": {
-                    "bio": "I'm a doctor Jim",
-                    "email": "mccoy@enterprise.com",
-                    "first_name": "Leonard",
-                    "job_title": "Doctor",
-                    "last_name": "McCoy",
-                    "manager_id": 1,
-                    "phone": "206-333-2222",
-                    "photo": null,
-                    "verification_method": "text"
-                },
+                "manager_id: 1,
                 "manager_notes": null,
                 "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
                 "renter_id": 2,
@@ -46,429 +37,316 @@ Authenticating users through the **Knock API**
                 "start_time": "2014-09-08T08:15:00-07:00",
                 "status": "requested",
                 "type": "tour",
-                "listing": {
-                    "amenities": {
-                        "appliances": null,
-                        "common": "",
-                        "laundry": null,
-                        "parking_type": null,
-                        "unit": [],
-                        "utilities": {
-                            "estimated_cost": null,
-                            "included": []
-                        },
-                        "views": null
-                    },
-                    "basic": {
-                        "bathrooms": 2,
-                        "bedrooms": 2,
-                        "price": 1495,
-                        "shared_unit": "false",
-                        "size": 1000,
-                        "year_built": null
-                    },
-                    "debug": {
-                        "raw_url": "https://mapleleafmanagement.appfolio.com/listings/listings/b038c0e7-066a-4e7c-b459-67af52a0224e",
-                        "source": "appfolio",
-                        "visibility": "internal"
-                    },
-                    "details": {
-                        "description": {
-                            "full": "2 bedroom, 2 bath townhouse style condominium in a very convenient location.  Features include large closets spaces, washer and dryer in unit, bamboo floors, wood burning fireplace, carpet is less than 6 months old and a small private terrace.  The master bedroom is located upstairs with a full bath.  Open and airy floor plan, very private and move-in ready.  One parking spot and additional storage. Great location with a 10 minute commute to downtown, easy access to the UW, Green Lake, Northgate.  Close to I-5, Aurora and Lake City Way which provides a quick commute to many other Seattle area communities and suburbs.   Move in ready condition.  No need for a car, you can either walk everywhere or it is just a short walk to the bus stop.Walk to.....Diva Espresso, Cooper's Ale House, Pagliacci Pizza, iBuger and Shake, Hudson Ale House, Chiang's Chinese, Roosevelt Ale House, Snappy Dragon, COA Mexican Restaurant, Reckless Video, Ace Hardware, Maple Leaf Grill and Maple Leaf Park.Indoor Cats Only with additional Pet Deposit.",
-                            "short": "Townhouse Style Condo, Large Closets, Convenient"
-                        },
-                        "pets": {
-                            "allowed": [],
-                            "notes": ""
-                        },
-                        "smoking_allowed": null,
-                        "wheelchair_access": null
-                    },
-                    "id": "054cfc34c7ec452af511cd5e2202c12966fc54a7",
-                    "leasing": {
-                        "application": {
-                            "fee": "",
-                            "link": "https://mapleleafmanagement.appfolio.com/listings/rental_applications/new?listable_uid=b038c0e7-066a-4e7c-b459-67af52a0224e&source=Website"
-                        },
-                        "available_date": null,
-                        "company": {
-                            "name": "Maple Leaf Management LLC",
-                            "phone": "(206) 250-7367",
-                            "url": "http://www.mapleleafmgt.com"
-                        },
-                        "terms": {
-                            "deposit": null
-                        }
-                    },
-                    "location": {
-                        "address": {
-                            "city": "Seattle",
-                            "house": "8800",
-                            "raw": "8800 20th Ave NE, #B101, Seattle, WA 98115",
-                            "state": "WA",
-                            "street": "20th Ave",
-                            "unit": null,
-                            "zip": "98115"
-                        },
-                        "geo": {
-                            "coordinates": [
-                                -122.306836,
-                                47.692459
-                            ],
-                            "type": "point"
-                        },
-                        "name": "8800 20th Ave, 98115",
-                        "property_type": "House"
-                    },
-                    "photos": [
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/2a67fa03-1dc8-4b39-925f-55eb5cae7301/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ab72917b-d6e4-4f7a-abc6-e52034150b6b/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/92188f1d-9a3e-4de3-99e7-54dbbd65153c/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ebd0b534-7c7e-488e-bf0f-8084f4d45efe/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/f692fa9e-638a-4843-8000-b41dd83e5cfd/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/41fd23a1-2fea-44d8-91d3-c75345792256/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/af24c03e-1460-4b37-84b3-268743500ade/medium.jpg",
-                        "https://pa.cdn.appfolio.com/mapleleafmanagement/images/d5087280-4b43-429c-88b6-5e68bca22011/medium.jpg"
-                    ],
-                    "promotions": "",
-                    "social_urls": []
-                }
+                "listing_id": "054cfc34c7ec452af511cd5e2202c12966fc54a7"
             }
 
-### Retrieve a single Appointment [GET]
+### Get Appointment [GET]
 + Response 200
     [Appointment][]
 
-### Cancel a single Appointment [DELETE]
+### Cancel Appointment [DELETE]
 + Response 204
 
-## Appointments Collection [/v1/appointments{?status,start,end}]
+
+## Appointments Collection [/v1/appointments{?status,start,end,listing_id}]
 + Model (application/json)
     + Body
 
-            {
-                "appointments": [
-                    {
-                        "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "end_time": "2014-09-08T08:00:00-07:00",
-                        "id": 2,
-                        "is_active": true,
-                        "manager_id": 1,
-                        "manager_notes": null,
-                        "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "renter_id": 2,
-                        "renter_notes": "Some renter written writings",
-                        "renter_visited": false,
-                        "start_time": "2014-09-08T08:15:00-07:00",
-                        "status": "visited",
-                        "type": "tour",
-                        "listing": {
-                            "amenities": {
-                                "appliances": null,
-                                "common": "",
-                                "laundry": null,
-                                "parking_type": null,
-                                "unit": [],
-                                "utilities": {
-                                    "estimated_cost": null,
-                                    "included": []
-                                },
-                                "views": null
-                            },
-                            "basic": {
-                                "bathrooms": 2,
-                                "bedrooms": 2,
-                                "price": 1495,
-                                "shared_unit": "false",
-                                "size": 1000,
-                                "year_built": null
-                            },
-                            "debug": {
-                                "raw_url": "https://mapleleafmanagement.appfolio.com/listings/listings/b038c0e7-066a-4e7c-b459-67af52a0224e",
-                                "source": "appfolio",
-                                "visibility": "internal"
-                            },
-                            "details": {
-                                "description": {
-                                    "full": "2 bedroom, 2 bath townhouse style condominium in a very convenient location.  Features include large closets spaces, washer and dryer in unit, bamboo floors, wood burning fireplace, carpet is less than 6 months old and a small private terrace.  The master bedroom is located upstairs with a full bath.  Open and airy floor plan, very private and move-in ready.  One parking spot and additional storage. Great location with a 10 minute commute to downtown, easy access to the UW, Green Lake, Northgate.  Close to I-5, Aurora and Lake City Way which provides a quick commute to many other Seattle area communities and suburbs.   Move in ready condition.  No need for a car, you can either walk everywhere or it is just a short walk to the bus stop.Walk to.....Diva Espresso, Cooper's Ale House, Pagliacci Pizza, iBuger and Shake, Hudson Ale House, Chiang's Chinese, Roosevelt Ale House, Snappy Dragon, COA Mexican Restaurant, Reckless Video, Ace Hardware, Maple Leaf Grill and Maple Leaf Park.Indoor Cats Only with additional Pet Deposit.",
-                                    "short": "Townhouse Style Condo, Large Closets, Convenient"
-                                },
-                                "pets": {
-                                    "allowed": [],
-                                    "notes": ""
-                                },
-                                "smoking_allowed": null,
-                                "wheelchair_access": null
-                            },
-                            "id": "054cfc34c7ec452af511cd5e2202c12966fc54a7",
-                            "leasing": {
-                                "application": {
-                                    "fee": "",
-                                    "link": "https://mapleleafmanagement.appfolio.com/listings/rental_applications/new?listable_uid=b038c0e7-066a-4e7c-b459-67af52a0224e&source=Website"
-                                },
-                                "available_date": null,
-                                "company": {
-                                    "name": "Maple Leaf Management LLC",
-                                    "phone": "(206) 250-7367",
-                                    "url": "http://www.mapleleafmgt.com"
-                                },
-                                "terms": {
-                                    "deposit": null
-                                }
-                            },
-                            "location": {
-                                "address": {
-                                    "city": "Seattle",
-                                    "house": "8800",
-                                    "raw": "8800 20th Ave NE, #B101, Seattle, WA 98115",
-                                    "state": "WA",
-                                    "street": "20th Ave",
-                                    "unit": null,
-                                    "zip": "98115"
-                                },
-                                "geo": {
-                                    "coordinates": [
-                                        -122.306836,
-                                        47.692459
-                                    ],
-                                    "type": "point"
-                                },
-                                "name": "8800 20th Ave, 98115",
-                                "property_type": "House"
-                            },
-                            "photos": [
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/2a67fa03-1dc8-4b39-925f-55eb5cae7301/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ab72917b-d6e4-4f7a-abc6-e52034150b6b/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/92188f1d-9a3e-4de3-99e7-54dbbd65153c/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ebd0b534-7c7e-488e-bf0f-8084f4d45efe/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/f692fa9e-638a-4843-8000-b41dd83e5cfd/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/41fd23a1-2fea-44d8-91d3-c75345792256/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/af24c03e-1460-4b37-84b3-268743500ade/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/d5087280-4b43-429c-88b6-5e68bca22011/medium.jpg"
-                            ],
-                            "promotions": "",
-                            "social_urls": []
-                        }
-                    },
-                    {
-                        "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "end_time": "2014-09-09T10:15:00-07:00",
-                        "id": 3,
-                        "is_active": true,
-                        "manager_id": 1,
-                        "manager_notes": null,
-                        "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "renter_id": 2,
-                        "renter_notes": "Some renter written writings",
-                        "renter_visited": false,
-                        "start_time": "2014-09-09T10:00:00-07:00",
-                        "status": "confirmed",
-                        "type": "tour",
-                        "listing": {
-                            "id": "511 San Juan Circle, 99504",
-                            "icon": "fa-home",
-                            "address": "511 San Juan Circle, 99504",
-                            "city": "Anchorage",
-                            "state": "AK",
-                            "price": 1595,
-                            "bedrooms": 3,
-                            "bathrooms": 2,
-                            "squareFeet": 1100,
-                            "available": null,
-                            "pets": [],
-                            "geo": {
-                                "longitude": -149.777217,
-                                "latitude": 61.217465
-                            },
-                            "images": [
-                                "https://photos.knockrentals.com/30ba145a-b67b-4ce6-82f2-63c7d533d2fa/medium.jpg",
-                                "https://photos.knockrentals.com/3ea08774-7de3-49d4-9d3d-686d7518eb30/medium.jpg",
-                                "https://photos.knockrentals.com/9c8b6077-abbb-4358-8436-b57f5aebbfd4/medium.jpg",
-                                "https://photos.knockrentals.com/45904a15-31fe-4b06-9f05-c46bb488ccd9/medium.jpg",
-                                "https://photos.knockrentals.com/d19470de-efe5-4a07-812f-c8ae4ccbad6b/medium.jpg",
-                                "https://photos.knockrentals.com/b392ac16-93d9-4a68-b64b-980b96cc87aa/medium.jpg",
-                                "https://photos.knockrentals.com/e7d1ed55-3327-4611-89c5-1e22b7a4e18e/medium.jpg",
-                                "https://photos.knockrentals.com/17247cb2-c7b4-428c-b6dd-1ed1a5a58a21/medium.jpg",
-                                "https://photos.knockrentals.com/99908f90-c340-4782-8d19-273acf46593e/medium.jpg",
-                                "https://photos.knockrentals.com/388236a7-d5fa-406a-8206-5365e1b3fc5c/medium.jpg",
-                                "https://photos.knockrentals.com/89bd2c4c-d6ae-4ab2-9cf2-bbe1b7549885/medium.jpg",
-                                "https://photos.knockrentals.com/367660f2-b03f-4965-93dd-5d9c7ebdeb24/medium.jpg",
-                                "https://photos.knockrentals.com/21541216-9ce9-4dab-b30f-c7b9c1c1ea14/medium.jpg",
-                                "https://photos.knockrentals.com/89ad8771-a5a3-437d-8008-3d1f7ce61e8b/medium.jpg",
-                                "https://photos.knockrentals.com/aaa42e35-2772-480b-a0b3-b74ff522ecc4/medium.jpg"
-                            ]
-                        }
-                    },
-                    {
-                        "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "end_time": "2014-09-10T13:30:00-07:00",
-                        "id": 4,
-                        "is_active": true,
-                        "manager_id": 1,
-                        "manager_notes": null,
-                        "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
-                        "renter_id": 2,
-                        "renter_notes": "Some renter written writings",
-                        "renter_visited": false,
-                        "start_time": "2014-09-10T13:15:00-07:00",
-                        "status": "requested",
-                        "type": "tour",
-                        "listing": {
-                            "amenities": {
-                                "appliances": null,
-                                "common": "",
-                                "laundry": null,
-                                "parking_type": null,
-                                "unit": [],
-                                "utilities": {
-                                    "estimated_cost": null,
-                                    "included": []
-                                },
-                                "views": null
-                            },
-                            "basic": {
-                                "bathrooms": 2,
-                                "bedrooms": 2,
-                                "price": 1495,
-                                "shared_unit": "false",
-                                "size": 1000,
-                                "year_built": null
-                            },
-                            "debug": {
-                                "raw_url": "https://mapleleafmanagement.appfolio.com/listings/listings/b038c0e7-066a-4e7c-b459-67af52a0224e",
-                                "source": "appfolio",
-                                "visibility": "internal"
-                            },
-                            "details": {
-                                "description": {
-                                    "full": "2 bedroom, 2 bath townhouse style condominium in a very convenient location.  Features include large closets spaces, washer and dryer in unit, bamboo floors, wood burning fireplace, carpet is less than 6 months old and a small private terrace.  The master bedroom is located upstairs with a full bath.  Open and airy floor plan, very private and move-in ready.  One parking spot and additional storage. Great location with a 10 minute commute to downtown, easy access to the UW, Green Lake, Northgate.  Close to I-5, Aurora and Lake City Way which provides a quick commute to many other Seattle area communities and suburbs.   Move in ready condition.  No need for a car, you can either walk everywhere or it is just a short walk to the bus stop.Walk to.....Diva Espresso, Cooper's Ale House, Pagliacci Pizza, iBuger and Shake, Hudson Ale House, Chiang's Chinese, Roosevelt Ale House, Snappy Dragon, COA Mexican Restaurant, Reckless Video, Ace Hardware, Maple Leaf Grill and Maple Leaf Park.Indoor Cats Only with additional Pet Deposit.",
-                                    "short": "Townhouse Style Condo, Large Closets, Convenient"
-                                },
-                                "pets": {
-                                    "allowed": [],
-                                    "notes": ""
-                                },
-                                "smoking_allowed": null,
-                                "wheelchair_access": null
-                            },
-                            "id": "054cfc34c7ec452af511cd5e2202c12966fc54a7",
-                            "leasing": {
-                                "application": {
-                                    "fee": "",
-                                    "link": "https://mapleleafmanagement.appfolio.com/listings/rental_applications/new?listable_uid=b038c0e7-066a-4e7c-b459-67af52a0224e&source=Website"
-                                },
-                                "available_date": null,
-                                "company": {
-                                    "name": "Maple Leaf Management LLC",
-                                    "phone": "(206) 250-7367",
-                                    "url": "http://www.mapleleafmgt.com"
-                                },
-                                "terms": {
-                                    "deposit": null
-                                }
-                            },
-                            "location": {
-                                "address": {
-                                    "city": "Seattle",
-                                    "house": "8800",
-                                    "raw": "8800 20th Ave NE, #B101, Seattle, WA 98115",
-                                    "state": "WA",
-                                    "street": "20th Ave",
-                                    "unit": null,
-                                    "zip": "98115"
-                                },
-                                "geo": {
-                                    "coordinates": [
-                                        -122.306836,
-                                        47.692459
-                                    ],
-                                    "type": "point"
-                                },
-                                "name": "8800 20th Ave, 98115",
-                                "property_type": "House"
-                            },
-                            "photos": [
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/2a67fa03-1dc8-4b39-925f-55eb5cae7301/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ab72917b-d6e4-4f7a-abc6-e52034150b6b/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/92188f1d-9a3e-4de3-99e7-54dbbd65153c/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/ebd0b534-7c7e-488e-bf0f-8084f4d45efe/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/f692fa9e-638a-4843-8000-b41dd83e5cfd/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/41fd23a1-2fea-44d8-91d3-c75345792256/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/af24c03e-1460-4b37-84b3-268743500ade/medium.jpg",
-                                "https://pa.cdn.appfolio.com/mapleleafmanagement/images/d5087280-4b43-429c-88b6-5e68bca22011/medium.jpg"
-                            ],
-                            "promotions": "",
-                            "social_urls": []
-                        }
-                    }
-                ]
-            }
+                 {
+                     "appointments": [
+                         {
+                             "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "end_time": "2014-09-08T08:00:00-07:00",
+                             "id": 2,
+                             "is_active": true,
+                             "manager_id": 1,
+                             "manager_notes": null,
+                             "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "renter_id": 2,
+                             "renter_notes": "Some renter written writings",
+                             "renter_visited": false,
+                             "start_time": "2014-09-08T08:15:00-07:00",
+                             "status": "visited",
+                             "type": "tour",
+                             "listing_id": "054cfc34c7ec452af511cd5e2202c12966fc54a7"
+                         },
+                         {
+                             "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "end_time": "2014-09-09T10:15:00-07:00",
+                             "id": 3,
+                             "is_active": true,
+                             "manager_id": 1,
+                             "manager_notes": null,
+                             "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "renter_id": 2,
+                             "renter_notes": "Some renter written writings",
+                             "renter_visited": false,
+                             "start_time": "2014-09-09T10:00:00-07:00",
+                             "status": "confirmed",
+                             "type": "tour",
+                             "listing_id": "054cfc34c7ec452af511cd5e2202c12966fc54a7"
+                         },
+                         {
+                             "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "end_time": "2014-09-10T13:30:00-07:00",
+                             "id": 4,
+                             "is_active": true,
+                             "manager_id": 1,
+                             "manager_notes": null,
+                             "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                             "renter_id": 2,
+                             "renter_notes": "Some renter written writings",
+                             "renter_visited": false,
+                             "start_time": "2014-09-10T13:15:00-07:00",
+                             "status": "requested",
+                             "type": "tour",
+                             "listing_id": "054cfc34c7ec452af511cd5e2202c12966fc54a7"
+                         }
+                     ]
+                 }
 
-### List all Appointments [GET]
+### Get Appointments [GET]
 + Parameters
-    + status (optional, string) .. Status identifier. Valid values are 'requested', 'confirmed', or 'visited'. Only appointments with the provided state are returned./
-    + start (optional, string) ... ISO timestamp. Only appointments that start on or after this date are returned.
-    + end (optional, string) ... ISO timestamp. Only appointments that end on or before this date are returned.
+    + status (optional, string, `requested`) .. Status identifier. Valid values are 'requested', 'confirmed', 'rejected, 'canceled', or 'visited'. Only appointments with the provided state are returned./
+    + start (optional, string, `2014-10-13T10:00-07:00`) ... ISO timestamp. Only appointments that start on or after this date are returned.
+    + end (optional, string, `2014-10-13T10:00-07:00`) ... ISO timestamp. Only appointments that end on or before this date are returned.
+    + listing_id (optional, string, `q4ru3tc4g26qxc7srvj4xcbsr5qtc7ud4ma9uzh8`) ... Unique listing ID
+
 + Response 200
     [Appointments Collection][]
 
-### Request an appointment [POST]
+### Request Appointment [POST]
 + Request (application/json)
 
-        {
-            "manager_id": 1,
-            "renter_id": 2,
-            "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
-            "timezone": "US/Pacific",
-            "start_time": "2014-10-13 10:00",
-            "end_time": "2014-10-13 12:00",
-            "type": "tour",
-            "manager_notes": "A note from the manager" (optional),
-            "renter_notes": "Some renter written writings" (optional)
-        }
+            {
+                 "listing_id": "9420d8f9202469a79df197455e9a595ff106f1cc",
+                 "requested_times": [
+                      {
+                           "start_time": "2014-10-13T10:00-07:00",
+                           "end_time": "2014-10-13T11:00-07:00"
+                      },
+                      {
+                           "start_time": "2014-10-13T11:00-07:00",
+                           "end_time": "2014-10-13T12:00-07:00"
+                      }
+                 ],
+                 "type": "tour",
+                 "renter_notes": "Some renter written writings" (optional)
+            }
 
 + Response 201 (application/json)
     [Appointment][]
 
-## Confirm [/v1/appointments/{id}/confirm]
+## Confirm [/v1/appointments/{appointment_id}/confirm]
 + Parameters
-    + id (string) ... ID of the appointment
+    + appointment_id (required, number, `14`) ... ID of the appointment
+
 + Model
+    + Body
 
-        {
-            "id": 2,
-            "confirmed": true,
-            "dateConfirmed": "2014-09-08T08:00:00-07:00"
-        }
+            {
+                'appointment_status': 'accepted'
+            }
 
-### Confirm an appointment [PUT]
-+ Response 204
 
-### Cancel confirmation of appointment [DELETE]
-+ Response 204
+### Confirm Appointment [POST]
++ Response 201 (application/json)
+    [Confirm][]
 
-### Check if an appointment is confirmed [GET]
+### Cancel Appointment Confirmation [DELETE]
++ Response 204 (application/json)
+
+### Get Appointment Confirmation [GET]
 + Response 200
     [Confirm][]
 
-## Visit [/v1/appointments/{id}/visit]
+
+## Visit [/v1/appointments/{appointment_id}/visit]
 + Parameters
-    + id (string) ... ID of the appointment
+    + appointment_id (required, number, `14`) ... ID of the appointment
+
 + Model
+    + Body
+            
+            {
+                'renter_visited': True
+            }
 
-        {
-            "id": 2,
-            "visited": true,
-            "dateVisited": "2014-09-08T08:00:00-07:00"
-        }
+### Set Appointment Visited Status [PUT]
++ Response 200
+    [Visit][] 
 
-### Mark an appointment as having been visited [PUT]
-+ Response 204
-
-### Check if an appointment has been visited [GET]
+### Get Appointment Visited Status [GET]
 + Response 200
     [Visit][]
 
+# Group Authentication
+
+## Register [/v1/auth/register]
+### Register Renter or Manager [POST]
++ Request (application/json)
+    
+            {
+                'type':'renter',
+                'firstname':'michael',
+                'lastname': 'frank',
+                'username': 'Chetmanley',
+                'password': 'qwerty123'
+            }
+
++ Response 201 (application/json)
+
+            {
+                'token':
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhIjoxLCJiIjoyfQ.qRrTAKuNhMWGekWwDoR7hylsgQq5VRKEpk5UvgguWaQ'
+            }
+
+
+## Validate [/v1/auth/validate]
+### Authenticate [POST]
+Validate a manager or renter
++ Request (application/json)
+
+            {
+                'type':'renter',
+                'username': 'Chetmanley',
+                'password': 'qwerty123'
+            }
+
++ Response 201 (application/json)
+
+            {
+                'token':
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhIjoxLCJiIjoyfQ.qRrTAKuNhMWGekWwDoR7hylsgQq5VRKEpk5UvgguWaQ'
+            }
+
++ Response 401 (application/json)
+
+            {
+              'error_message': 'invalid credential'
+            }
+
+## Facebook [/v1/auth/facebook]
+### Facebook Login [POST]
++ Request (application/json)
+    
+        {
+            'clientID': 'SYgWfyVDcpmSDN2W',
+            'redirectUri': 'http://www.redirectdestination.com',
+            'code': 'pmguG3D7nkNgdT7t'
+        }
+
++ Response 201 (application/json)
+
+        {
+            'token':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhIjoxLCJiIjoyfQ.qRrTAKuNhMWGekWwDoR7hylsgQq5VRKEpk5UvgguWaQ'
+        }
+
++ Response 403 (application/json)
+
+        {
+            'error_message': 'Message describing the error',
+            'error_type': 'OAuthException'
+        }
+
+## Linkedin [/v1/auth/linkedin]
+### Linkedin Login [POST]
++ Request (application/json)
+
+        {
+            'clientID': 'SYgWfyVDcpmSDN2W',
+            'redirectUri': 'http://www.redirectdestination.com',
+            'code': 'pmguG3D7nkNgdT7t'
+        }
+
++ Response 201 (application/json)
+
+        {
+            'token':
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhIjoxLCJiIjoyfQ.qRrTAKuNhMWGekWwDoR7hylsgQq5VRKEpk5UvgguWaQ'
+        }
+
++ Response 403 (application/json)
+
+        {
+            'error_message': 'Message describing the error',
+            'error_type': 'OAuthException'
+        }
+
+# Group Community
+
+## Community [/v1/community]
+### Save Community [POST]
++ Request (application/json)
+
+            {
+                'community':'Capital Heights'
+            }
+
++ Response 201 (application/json)
+
+            {
+                'community_id':'gl9avl5OV0EzgdG1'
+            }
+
+
+## Community Information [/v1/community/{community_id}]
++ Parameters
+    + community_id (required, string, `gl9avl5OV0EzgdG1`) ... ID of the community of interest
+
++ Model (application/json)
+    + Body
+            
+            {
+                'community': {}
+            }
+
+
+### Retrieve a single community [GET]
++ Response 200 (application/json)
+    
+    [Community Information][]
+
+
+## Community Photo [/v1/community/photo]
+### Upload Photo [POST]
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+            -----BOUNDARY
+            Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+            Content-Type: image/jpeg
+            Content-Transfer-Encoding: base64
+   
+            /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+            HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+            MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+            AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+            AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+            -----BOUNDARY
+
++ Response 201 (application/json)
+    
+            {
+                's3key': 'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg',
+                's3url':
+                'knock.example.picture.s3.amazonaws.com/an84nJd8snd8JJ8.jpg'
+            }
+
+
+## Delete Community Photo [/v1/community/photo/delete]
+### Delete Photo [POST]
++ Request (application/json)
+
+            {
+                's3key':'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg'
+            }
+
++ Response 201 (application/json)
+
+            {
+                'deleted': 'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg' 
+            }
 
 # Group Health
 ## Health Check [/v1/system/health/check/]
@@ -489,206 +367,407 @@ Authenticating users through the **Knock API**
 # Group Listing
 
 ## Listing [/v1/listing/{listing_id}/]
+### Get Listing [GET]
++ Parameters
+    + listing_id (required, string, `xfp5uhm4wx9sm54722thtf2t3t9xr2hahf4536jq`) ... Unique ID for a listing
+
++ Response 200
+             
+            {
+                'listing': {
+                    "social": {
+                        "website": "",
+                        "twitter": "",
+                        "facebook": ""
+                    },
+                    "laundry": {
+                        "notes": "",
+                        "types": []
+                    },
+                    "description": {
+                        "short": "",
+                        "full": ""
+                    },
+                    "floorplan": {
+                        "image": null,
+                        "bedrooms": "1",
+                        "bathrooms": "1",
+                        "size": "1000"
+                    },
+                    "views": [],
+                    "extra": {
+                        "isSmokingAllowed": null,
+                        "yearBuilt": "",
+                        "hasWheelchairAccess": null,
+                        "sharedUnit": false
+                    },
+                    "utilities": {
+                        "estimatedCost": "",
+                        "included": []
+                    },
+                    "photos": {
+                        "files": [
+                            {
+                              "s3url": "https://zipdigs_photos.s3.amazonaws.com/knock/community/a3VwdG9uLmpwZzIwMTQtMTAtMjkgMTU6NDQ6NTEuOTkw...",
+                              "s3key": "knock/community/a3VwdG9uLmpwZzIwMTQtMTAtMjkgMTU6NDQ6NTEuOTkwOTQw.jpg",
+                              "filename": "kupton.jpg"
+                            }
+                        ]
+                    },
+                    "amenities": {
+                        "common": [],
+                        "unit": []
+                    },
+                    "location": {
+                        "propertyType": "",
+                        "geo": {
+                          "type": "point",
+                          "coordinates": [
+                            -122.3748877,
+                            47.6545525
+                          ]
+                        },
+                        "name": "1234 5th Ave",
+                        "address": {
+                          "city": "Seattle",
+                          "zip": "98119",
+                          "house": "",
+                          "raw": "1234 5th Avenue, Seattle, WA 98119, USA",
+                          "state": "WA",
+                          "street": "1234 5th Avenue",
+                          "unit": "B202"
+                        }
+                    },
+                    "appliances": [],
+                    "parking": {
+                      "notes": "",
+                      "types": []
+                    },
+                    "leasing": {
+                        "availableDate": "2014-10-29T07:00:00.000Z",
+                        "application": {
+                          "fee": "",
+                          "link": ""
+                        },
+                        "terms": {
+                          "deposit": ""
+                        },
+                        "monthlyRent": "1500"
+                    },
+                    "id": "GELe3Qv7MJGXQb69",
+                    "pets": {
+                        "notes": "",
+                        "allowed": []
+                    }
+                }
+            }
+
+
+## New Listing [/v1/listing/]
+### Create Listing [POST]
++ Request (application/json)
+
+            {
+              'listing':
+                  {
+                    "social": {
+                      "website": "",
+                      "twitter": "",
+                      "facebook": ""
+                    },
+                    "laundry": {
+                      "notes": "",
+                      "types": []
+                    },
+                    "description": {
+                      "short": "",
+                      "full": ""
+                    },
+                    "floorplan": {
+                      "image": null,
+                      "bedrooms": "1",
+                      "bathrooms": "1",
+                      "size": "1000"
+                    },
+                    "views": [],
+                    "extra": {
+                      "isSmokingAllowed": null,
+                      "yearBuilt": "",
+                      "hasWheelchairAccess": null,
+                      "sharedUnit": false
+                    },
+                    "utilities": {
+                      "estimatedCost": "",
+                      "included": []
+                    },
+                    "photos": {
+                      "files": [
+                        {
+                          "s3url":
+                  "https://zipdigs_photos.s3.amazonaws.com/knock/community/a3VwdG9uLmpwZzIwMTQtMTAtMjkgMTU6NDQ6NTEuOTkw...",
+                          "s3key":
+                  "knock/community/a3VwdG9uLmpwZzIwMTQtMTAtMjkgMTU6NDQ6NTEuOTkwOTQw.jpg",
+                          "filename": "kupton.jpg"
+                        }
+                      ]
+                    },
+                    "amenities": {
+                      "common": [],
+                      "unit": []
+                    },
+                    "location": {
+                      "propertyType": "",
+                      "geo": {
+                        "type": "point",
+                        "coordinates": [
+                          -122.3748877,
+                          47.6545525
+                        ]
+                      },
+                      "name": "3810 14th Avenue West",
+                      "address": {
+                        "city": "Seattle",
+                        "zip": "98119",
+                        "house": "",
+                        "raw": "3810 14th Avenue West, Seattle, WA 98119, USA",
+                        "state": "WA",
+                        "street": "3810 14th Avenue West",
+                        "unit": "B202"
+                      }
+                    },
+                    "appliances": [],
+                    "parking": {
+                      "notes": "",
+                      "types": []
+                    },
+                    "leasing": {
+                      "availableDate": "2014-10-29T07:00:00.000Z",
+                      "application": {
+                        "fee": "",
+                        "link": ""
+                      },
+                      "terms": {
+                        "deposit": ""
+                      },
+                      "monthlyRent": "1500"
+                    },
+                    "id": "GELe3Qv7MJGXQb69",
+                    "pets": {
+                      "notes": "",
+                      "allowed": []
+                    }
+                }
+            }
+
++ Response 201 (application/json)
+
+            {
+                'listing_id': 'JQpNKcNbCzYYysuu'
+            }
+
+
+## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
+### Get Listing Open Houses [GET]
++ Parameters
+    + listing_id (required, string, `xfp5uhm4wx9sm54722thtf2t3t9xr2hahf4536jq`) ... Unique listing ID
+
++ Response 200 (application/json)
+
+            {
+                'open_houses': [
+                    {
+                        'id': 14,
+                        'manager_id': 45,
+                        'listing_id': 'b2pk65wvzb9cr7hny6jmx98yh4b5dwrnbv8e3q7m',
+                        'start_time': "2014-10-29T07:00:00.000Z",
+                        'end_time': "2014-10-29T07:00:00.000Z",
+                        'notes': '',
+                        'created_time': "2014-10-29T07:00:00.000Z",
+                        'modified_time': "2014-10-29T07:00:00.000Z",
+                        'is_active': true
+                    }
+                ]
+            }
+
+
+## Listing Calendar [/v1/listing/{listing_id}/calendar{?start,end}/]
++ Parameters
+    + listing_id (required, string, `3dfre7dtdpun4c6wx8fbkss32a2szbe2sfyvnyyq`) ... Unique listing ID
+    + start (optional, string, `2014-09-01T09:00-07:00`) ... Timestamp in ISO 8601 for beginning of calendar period
+    + end (optional, string, `2014-10-13T13:00-07:00`) ... Timestamp in ISO 8601 for end of calendar period
 
 + Model (application/json)
 
     + Body
 
             {
-              "listings": {
-                "amenities": {
-                  "appliances": null,
-                  "common": "",
-                  "laundry": null,
-                  "parking_type": null,
-                  "unit": [],
-                  "utilities": {
-                    "estimated_cost": null,
-                    "included": []
-                  },
-                  "views": null
-                },
-                "basic": {
-                  "bathrooms": 1.5,
-                  "bedrooms": 3.0,
-                  "price": 1095.0,
-                  "shared_unit": "false",
-                  "size": 1532.0,
-                  "year_built": null
-                },
-                "debug": {
-                  "raw_url": "https://fresnomanagement.appfolio.com/listings/listings/24d529e2-c0c9-4932-92d5-89194bdd8378",
-                  "source": "appfolio",
-                  "visibility": "internal"
-                },
-                "details": {
-                  "description": {
-                    "full": "Charming 3 bedroom 2 bath home located on the corner lot includes a small bonus room that can be used office space or a play area.  Traditional Tower style home consists of built in cabinets throughout the home, detached 1 car garage, refrigerator and gas stove, laundry hookups located on the interior porch like setting. There is a covered patio that is great for entertaining and mature landscaping give you a nice and shady backyard.  Call today to schedule your appointment to view the inside as it won't last long!Fresno Management Companywww.FresnoPMC.com(559)438-9411BRE# 01795978",
-                    "short": "Charming Tower Bungalow"
-                  },
-                  "pets": {
-                    "allowed": [],
-                    "notes": ""
-                  },
-                  "smoking_allowed": null,
-                  "wheelchair_access": null
-                },
-                "id": "edf2bf3b291066e95cfeee8105248927db884bac",
-                "leasing": {
-                  "application": {
-                    "fee": "",
-                    "link": ""
-                  },
-                  "available_date": null,
-                  "company": {
-                    "name": "Fresno Management Company",
-                    "phone": "(559) 438-9411",
-                    "url": ""
-                  },
-                  "terms": {
-                    "deposit": null
-                  }
-                },
-                "location": {
-                  "address": {
-                    "city": "Fresno",
-                    "house": "1005",
-                    "raw": "1005 N. Thorne Ave., Fresno, CA 93728",
-                    "state": "CA",
-                    "street": "N Thorne Ave",
-                    "unit": null,
-                    "zip": "93728"
-                  },
-                  "geo": {
-                    "coordinates": [
-                      -119.813107,
-                      36.755985
-                    ],
-                    "type": "point"
-                  },
-                  "name": "1005 N Thorne Ave, 93728",
-                  "property_type": "House"
-                },
-                "photos": [
-                  "https://photos.knockrentals.com535d8d6f-f39d-48d8-9782-7e35ba261fbd/medium.jpg",
-                  "https://photos.knockrentals.com60177a25-8f1b-40a4-ad92-c1a417bfba62/medium.jpg",
-                  "https://photos.knockrentals.com6321346b-120d-4ad5-b5d8-d1e8912ac00e/medium.jpg",
-                  "https://photos.knockrentals.comf13679ad-ee7f-4145-9e63-ac5f4dff8038/medium.jpg",
-                  "https://photos.knockrentals.com3466a9c9-cce4-4b80-8b1b-b59566eeacaa/medium.jpg",
-                  "https://photos.knockrentals.comd9e77424-3ebf-4469-8255-a71b9ae47786/medium.jpg",
-                  "https://photos.knockrentals.com2cdf758a-1ea6-442b-ad7c-3e71258cc6c6/medium.jpg",
-                  "https://photos.knockrentals.comec10bdfd-ff24-427c-be15-7671a658612f/medium.jpg",
-                  "https://photos.knockrentals.com9ca680a0-aa8d-4642-98ec-23bdd81a5d41/medium.jpg",
-                  "https://photos.knockrentals.com89390baa-b292-4f23-a35a-ed7eee4da042/medium.jpg",
-                  "https://photos.knockrentals.com497d8bce-c4c2-48a3-96ae-7e02287e625e/medium.jpg",
-                  "https://photos.knockrentals.coma79a7a09-01d6-4446-8690-a769b69af102/medium.jpg",
-                  "https://photos.knockrentals.com397958b4-aa64-4a21-8d0e-3d800bf20bcb/medium.jpg"
-                ],
-                "promotions": "",
-                "social_urls": []
-              }
+                "appointments": [ ],
+                "open_houses": [ ]
             }
-
-### Get Listing [GET]
-
-+ Response 200
-
-    [Listing][]
-
-## Listing Openhouse [/v1/listing/{listing_id}/openhouse/]
-
-+ Model (application/json)
-
-    + Body
-
-        {
-            open_houses: [ ]
-        }
-
-### Get listing's openhouses [GET]
-
-+ Response 200
-
-    [Listing Openhouse][]
-
-## Listing Calendar [/v1/listing/{listing_id}/calendar{?start,end}/]
-
-+ Parameters
-
-    + start (required, string, '2014-09-01T09:00-07:00') ... Timestamp in ISO 8601 for beginning of calendar period
-
-    + end (required, string, '2014-10-13T13:00-07:00') ... Timestamp in ISO 8601 for end of calendar period
-
-+ Model (application/json)
-
-    + Body
-
-        {
-            "appointments": [ ],
-            "open_houses": [ ],
-            "availableTimes": [
-                "2014-09-25T09:00-07:00",
-                "2014-09-25T09:15-07:00",
-                "2014-09-25T10:00-07:00",
-                "2014-09-25T10:30-07:00",
-                "2014-09-25T13:15-07:00",
-                "2014-09-26T09:00-07:00",
-                "2014-09-26T11:45-07:00",
-                "2014-09-26T16:00-07:00",
-                "2014-09-27T09:00-07:00",
-                "2014-09-27T10:45-07:00",
-                "2014-09-27T14:00-07:00",
-                "2014-09-27T15:15-07:00",
-                "2014-09-28T08:15-07:00",
-                "2014-09-28T08:45-07:00",
-                "2014-09-28T12:30-07:00"
-            ]
-        }
 
 ### Get listing's calendar [GET]
-
 + Response 200
-
     [Listing Calendar][]
 
+
+## Listing Available Times [/v1/listing/{listing_id}/availableTimes{?start,end}/]
+### Get Listing's Available Times [GET]
++ Parameters
+    + listing_id (required, string, `3dfre7dtdpun4c6wx8fbkss32a2szbe2sfyvnyyq`) ... Unique listing ID
+    + start (optional, string, `2014-09-01T09:00-07:00`) ... Timestamp in ISO 8601 for beginning of schedule period
+    + end (optional, string, `2014-10-13T13:00-07:00`) ... Timestamp in ISO 8601 for end of schedule period
+
++ Response 200 (application/json)
+        
+            {
+                'tour_slots': [
+                    '2014-09-01T09:00-07:00'
+                ],
+                'open_house_slots': [
+                    '2014-09-01T10:00-07:00'
+                ]
+            }
+
+
+## Listing Photo [/v1/listing/photo]
+### Upload Listing Photo [POST]
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+            -----BOUNDARY
+            Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+            Content-Type: image/jpeg
+            Content-Transfer-Encoding: base64
+
+            /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+            HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+            MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+            AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+            AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+            -----BOUNDARY
+ 
++ Response 201 (application/json)
+                   
+            {
+                's3key': 'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg',
+                's3url':
+                'knock.example.picture.s3.amazonaws.com/an84nJd8snd8JJ8.jpg'
+            }
+
+## Delete Listing Photo [/v1/listing/photo/delete]
+### Delete Photo [POST]
++ Request (application/json)
+
+            {
+                's3key':'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg'
+            }
+
++ Response 201 (application/json)
+
+            {
+                'deleted': 'knock/community/d3d3Lmdvb2dsZS5jb20xMC0zMS0xOTkx.jpg' 
+            }
+
+# Group Location
+
+## Timezone [/v1/location/timezone/]
+### Get Timezone [GET]
++ Parameters
+    + lat (optional, number, `47.45`) ... Lattitude of location of interest
+    + lng (optional, number, `-122.30`) ... Longitude of location of interest
+
++ Response 200 (application/json)
+
+            {
+                'timezone': {
+                    'dstOffset': 3600,
+                    'rawOffset': -28800,
+                    'status': 'OK',
+                    'timeZoneId': 'America/Los_Angeles',
+                    'timeZoneName': 'Pacific Daylight Time'
+                }
+            }
+
+
 # Group Manager
-## Manager [/v1/manager/]
-### Get this manager [GET]
+
+## Manager [/v1/manager/{manager_id}]
+### Get Manager by ID [GET]
+Get manager using the manager_id parameter
++ Parameters
+    + manager_id (required, string, `gPZMUKwFBrCjgWqU`) ... Unique manager ID
+
 + Response 200 (application/json)
 
-        {
-            "manager": {
-                "created_time": "Wed, 03 Sep 2014 06:41:48 GMT",
-                "id": 1,
-                "is_active": true,
-                "modified_time": "Wed, 03 Sep 2014 06:41:48 GMT",
-                "provider": "knock",
-                "username": "spock@enterprise.com"
+            {
+                "manager": {
+                    "created_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                    "id": 'gPZMUKwFBrCjgWqU',
+                    "is_active": true,
+                    "modified_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                    "provider": "knock",
+                    "username": "spock@enterprise.com"
+                }
             }
-        }
 
-## Manager Info [/v1/manager/info]
-### Get this manager's info [GET]
+## Manager Info [/v1/manager/{manager_id}/info]
+### Get Manger Info by ID [GET]
++ Parameters
+    + manager_id (required, string, `gPZMUKwFBrCjgWqU`) ... Unique manager ID
+
 + Response 200 (application/json)
 
-        {
-            "manager_info": {
-                "bio": "I'm a doctor Jim",
-                "email": "mccoy@enterprise.com",
-                "first_name": "Leonard",
-                "job_title": "Doctor",
-                "last_name": "McCoy",
-                "manager_id": 1,
-                "phone": "206-333-2222",
-                "photo": null,
-                "verification_method": "text"
+            {
+                "manager_info": {
+                    "bio": "I'm a doctor Jim",
+                    "email": "mccoy@enterprise.com",
+                    "first_name": "Leonard",
+                    "job_title": "Doctor",
+                    "last_name": "McCoy",
+                    "manager_id": 1,
+                    "phone": "206-333-2222",
+                    "photo": null,
+                    "verification_method": "text"
+                }
             }
-        }
 
-### Update this manager's info [POST]
+
+## Manager from Auth [/v1/manager/]
+### Get Manager [GET]
+Get manager using the ID imbedded in the authorization header
++ Response 200 (application/json)
+
+            {
+                "manager": {
+                    "created_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                    "id": 'gPZMUKwFBrCjgWqU',
+                    "is_active": true,
+                    "modified_time": "Wed, 03 Sep 2014 06:41:48 GMT",
+                    "provider": "knock",
+                    "username": "spock@enterprise.com"
+                }
+            }
+
+## Manager Info from Auth [/v1/manager/info]
+### Get Manager Info [GET]
+Get manager info using the ID imbedded in the authorization header
++ Response 200 (application/json)
+
+            {
+                "manager_info": {
+                    "bio": "I'm a doctor Jim",
+                    "email": "mccoy@enterprise.com",
+                    "first_name": "Leonard",
+                    "job_title": "Doctor",
+                    "last_name": "McCoy",
+                    "manager_id": 1,
+                    "phone": "206-333-2222",
+                    "photo": null,
+                    "verification_method": "text"
+                }
+            }
+
+### Update Manager Info [POST]
 + Request
-
-    + Body
 
             {
                 "bio": "Still a doctor",
@@ -703,30 +782,26 @@ Authenticating users through the **Knock API**
 
 + Response 201 (application/json)
     
-    + Body
-
             {
-                "manager_info": 1
+                "manager_info": 'gPZMUKwFBrCjgWqU'
             }
 
 ## Manager Preferences [/v1/manager/preferences]
-### Get this manager's preferences [GET]
+### Get Manager Preferences [GET]
 + Response 200 (application/json)
 
-        {
-            "manager": {
-                "adjacent_showing_interval": "0:15:00",
-                "all_showings": false,
-                "concurrent_showing_visitors": 3,
-                "income_requirement_multiplier": 2,
-                "manager_id": 1
+            {
+                "manager_preferences": {
+                    "adjacent_showing_interval": "0:15:00",
+                    "all_showings": false,
+                    "concurrent_showing_visitors": 3,
+                    "income_requirement_multiplier": 2,
+                    "manager_id": 1
+                }
             }
-        }
 
-### Update this manager's preferences [POST]
+### Update Manager Preferences [POST]
 + Request
-
-    + Body
 
             {
                 "all_showings": false,
@@ -734,58 +809,417 @@ Authenticating users through the **Knock API**
                 "adjacent_showing_interval": 15,
                 "income_requirement_multiplier": 1.5
             }
-   
+
 + Response 201 (application/json)
+
+            {
+                "manager_preferences": 'ukee6w5hrjyerz3a'
+            }
+
+## Manager Listings [/v1/manager/listing/]
+### Get Manager Listings [GET]
++ Response 200 (application/json)
     
+            {
+                'listings': [
+                    {
+                      "social": {
+                        "website": "",
+                        "twitter": "",
+                        "facebook": ""
+                      },
+                      "laundry": {
+                        "notes": "",
+                        "types": []
+                      },
+                      "description": {
+                        "short": "",
+                        "full": ""
+                      },
+                      "floorplan": {
+                        "image": null,
+                        "bedrooms": "1",
+                        "bathrooms": "1",
+                        "size": "1000"
+                      },
+                      "views": [],
+                      "extra": {
+                        "isSmokingAllowed": null,
+                        "yearBuilt": "",
+                        "hasWheelchairAccess": null,
+                        "sharedUnit": false
+                      },
+                      "utilities": {
+                        "estimatedCost": "",
+                        "included": []
+                      },
+                      "photos": {
+                        "files": [
+                          {
+                            "s3url":
+                    "https://example_photos.s3.amazonaws.com/knock/community/a3VwdG9uLmpwZzIwMTdtMTAtMjkgMTU6NDq6NTE4OTkw...",
+                            "s3key":
+                    "knock/community/a3VwdG9uLmpwvzIwMTQtnTAtMjkg6TU6NDQ6NTEuOtkwOTQw.jpg",
+                            "filename": "kupton.jpg"
+                          }
+                        ]
+                      },
+                      "amenities": {
+                        "common": [],
+                        "unit": []
+                      },
+                      "location": {
+                        "propertyType": "",
+                        "geo": {
+                          "type": "point",
+                          "coordinates": [
+                            -122.3748877,
+                            47.6545525
+                          ]
+                        },
+                        "name": "1234 5th Street",
+                        "address": {
+                          "city": "Seattle",
+                          "zip": "98119",
+                          "house": "",
+                          "raw": "1234 5th Street",
+                          "state": "WA",
+                          "street": ""5th Street"
+                          "unit": "A"
+                        }
+                      },
+                      "appliances": [],
+                      "parking": {
+                        "notes": "",
+                        "types": []
+                      },
+                      "leasing": {
+                        "availableDate": "2014-10-29T07:00:00.000Z",
+                        "application": {
+                          "fee": "",
+                          "link": ""
+                        },
+                        "terms": {
+                          "deposit": ""
+                        },
+                        "monthlyRent": "1500"
+                      },
+                      "pets": {
+                        "notes": "",
+                        "allowed": []
+                      }
+                    }
+                ]
+            }
+
+## Manager Listing [/v1/manager/listing/{listing_id}]
++ Model
     + Body
 
             {
-                "manager_preferences": 1
+                'listing':
+                    {
+                      "social": {
+                        "website": "",
+                        "twitter": "",
+                        "facebook": ""
+                      },
+                      "laundry": {
+                        "notes": "",
+                        "types": []
+                      },
+                      "description": {
+                        "short": "",
+                        "full": ""
+                      },
+                      "floorplan": {
+                        "image": null,
+                        "bedrooms": "1",
+                        "bathrooms": "1",
+                        "size": "1000"
+                      },
+                      "views": [],
+                      "extra": {
+                        "isSmokingAllowed": null,
+                        "yearBuilt": "",
+                        "hasWheelchairAccess": null,
+                        "sharedUnit": false
+                      },
+                      "utilities": {
+                        "estimatedCost": "",
+                        "included": []
+                      },
+                      "photos": {
+                        "files": [
+                          {
+                            "s3url":
+                    "https://example_photos.s3.amazonaws.com/knock/community/a3VwdG9uLmpwZzIwMTdtMTAtMjkgMTU6NDq6NTE4OTkw...",
+                            "s3key":
+                    "knock/community/a3VwdG9uLmpwvzIwMTQtnTAtMjkg6TU6NDQ6NTEuOtkwOTQw.jpg",
+                            "filename": "kupton.jpg"
+                          }
+                        ]
+                      },
+                      "amenities": {
+                        "common": [],
+                        "unit": []
+                      },
+                      "location": {
+                        "propertyType": "",
+                        "geo": {
+                          "type": "point",
+                          "coordinates": [
+                            -122.3748877,
+                            47.6545525
+                          ]
+                        },
+                        "name": "1234 5th Street",
+                        "address": {
+                          "city": "Seattle",
+                          "zip": "98119",
+                          "house": "",
+                          "raw": "1234 5th Street",
+                          "state": "WA",
+                          "street": ""5th Street"
+                          "unit": "A"
+                        }
+                      },
+                      "appliances": [],
+                      "parking": {
+                        "notes": "",
+                        "types": []
+                      },
+                      "leasing": {
+                        "availableDate": "2014-10-29T07:00:00.000Z",
+                        "application": {
+                          "fee": "",
+                          "link": ""
+                        },
+                        "terms": {
+                          "deposit": ""
+                        },
+                        "monthlyRent": "1500"
+                      },
+                      "pets": {
+                        "notes": "",
+                        "allowed": []
+                      }
+                    }
             }
 
+### Get Manager Listing [GET]
++ Parameters
+    + listing_id (required, string, `PKzrzpCYnpCCsnHf`) ... Unique listing ID
+
++ Response 200 (application/json)
+    [Manager Listing][]
+
+### Update Manager Listing [PUT]
++ Parameters
+    + listing_id (required, string, `PKzrzpCYnpCCsnHf`) ... Unique listing ID
+
++ Request (application/json)
+     [Manager Listing][]
+
++ Response 201 (application/json)
+
+            {
+                'listing_id': 'ebsfejwfrbhj6uqs6bvyusus65pxtk8x'
+            }
+
+## Manager Hours [/v1/manager/hours/]
+### Get Manager Hours [GET]
++ Response 200 (application/json)
+    
+            {
+                'office_hours': [
+                    {
+                        'id': 141,
+                        'manager_id': 63,
+                        'date': "2014-10-08T09:00-07:00",
+                        'day_of_week': 3,
+                        'start_time': "2014-10-13T09:00-07:00",
+                        'end_time': "2014-10-13T10:00-07:00",
+                        'notes': '',
+                        'created_time': "2014-10-04T09:00-07:00",
+                        'modified_time': "2014-10-04T09:00-07:00",
+                        'is_active': True
+                    }
+                ]
+            }
+
+### Post Manager Hours [POST]
++ Request (application/json)
+    
+            [
+                {
+                    "start_time": "2014-10-13T09:00-07:00",
+                    "end_time": "2014-10-13T16:30-07:00",
+                    "notes": "some sort of note" (optional)
+                },
+                {
+                    "start_time": "2014-10-14T09:00-07:00",
+                    "end_time": "2014-10-14T16:30-07:00",
+                    "notes": "some sort of note" (optional)
+                }
+            ]
+
++ Response 201 (application/json)
+
+            {
+                'weekly_office_hour_id': 345
+            }
+
+
+## Open House [/v1/manager/openhouse/]
+### Get Open Houses [GET]
++ Response 200 (application/json)
+    
+            {
+                'open_houses': [
+                    {
+                        'id': 31,
+                        'manager_id': 63,
+                        'listing_id': '3k39sp2t668tcz7fjzex6j45t4hbgfj8tq7gmzp5',
+                        'start_time': "2014-10-13T09:00-07:00",
+                        'end_time': "2014-10-13T10:00-07:00",
+                        'notes': '',
+                        'created_time': "2014-10-04T09:00-07:00",
+                        'modified_time': "2014-10-04T09:00-07:00",
+                        'is_active': True     
+                    }
+                ]
+            }
+
+## Open House Details [/v1/manager/openhouse/{open_house_id}]
+### Get Open House [GET]
++ Parameters
+    + open_house_id (required, number, `54`) ... Unique ID for an open house
+        event
+
++ Response 200 (application/json)
+    
+            {
+                'open_house_id': 54
+            }
+
+
+## Manager Calendar [/v1/manager/calendar/]
+### Get Manager Calendar [GET]
++ Parameters
+    + manager_id (optional, number, `43`) ... Unique manager ID
+    + start (optional, string, `2014-10-04T09:00-07:00`) ... Start time
+    + end (optional, string, `2014-10-04T10:00-07:00`) ... End time
+
++ Response 200 (application/json)
+
+            {
+                'appointments': [
+                    {
+                        "created_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                        "end_time": "2014-09-08T08:00:00-07:00",
+                        "id": 2,
+                        "is_active": true,
+                        "manager_id: 1,
+                        "manager_notes": null,
+                        "modified_time": "Wed, 03 Sep 2014 08:29:23 GMT",
+                        "renter_id": 2,
+                        "renter_notes": "Some renter written writings",
+                        "renter_visited": false,
+                        "start_time": "2014-09-08T08:15:00-07:00",
+                        "status": "requested",
+                        "type": "tour",
+                        "listing_id": "054cfc34c7ec452af511cd5e2202c12966fc54a7"
+                    }
+
+                ],
+                'requests': [
+
+                ],
+                'open_houses': [
+                    {
+                        'id': 31,
+                        'manager_id': 63,
+                        'listing_id': '3k39sp2t668tcz7fjzex6j45t4hbgfj8tq7gmzp5',
+                        'start_time': "2014-10-13T09:00-07:00",
+                        'end_time': "2014-10-13T10:00-07:00",
+                        'notes': '',
+                        'created_time': "2014-10-04T09:00-07:00",
+                        'modified_time': "2014-10-04T09:00-07:00",
+                        'is_active': True     
+                    }
+                ]
+            }
+
+
+## Manager Community [/v1/manager/community/]
+### Get Manager Communities [GET]
++ Response 200 (application/json)
+
+            {
+                'communities': [
+                    
+                ]
+            }
 
 # Group Profile
 
 ## Profile [/v1/profile/]
-
-+ Model (application/json)
-
-    + Body
-
-            {
-                "profile": {
-                    "bio": "Explore strange new worlds",
-                    "co_tenants": 4,
-                    "email": "kirk@enterprise.com",
-                    "first_name": "Tiberius",
-                    "income": "100000",
-                    "job_title": "Captain",
-                    "last_name": "Kirk",
-                    "phone": "(206)765-4321",
-                    "photo": null,
-                    "renter_id": 8,
-                    "verification_method": null
-                }
-            }
-
 ### Get Profile [GET]
++ Response 200 (application/json)
 
-+ Response 200
+        {
+            "profile": {
+                "bio": "Explore strange new worlds",
+                "co_tenants": 4,
+                "email": "kirk@enterprise.com",
+                "first_name": "Tiberius",
+                "income": "100000",
+                "job_title": "Captain",
+                "last_name": "Kirk",
+                "phone": "(206)765-4321",
+                "photo": null,
+                "renter_id": 8,
+                "verification_method": null
+            }
+        }
 
-    [Profile][]
+### Save Profile [PUT]
++ Request (application/json)
 
-### Put Profile [PUT]
+        {
+            'password': 'qwerty43',
+            'first_name': 'John',
+            'last_name': 'Smith',
+            'email': 'johnsmith@email.com',
+            'credit_score': '3',
+            'monthly_income': '40000',
+            'phone': {
+                'npa': '206',
+                'nxx': '111',
+                'xxxx': '2222'
+            },
+            'pets': {
+                'dogs': '',
+                'cats': ''
+            },
+            'co_tenants': 3,
+            'target_move_date': '05/11/2014',
+            'photo': '',
+            'bio': 'I have a beard'
+        }
 
-    Work in progress
++ Response 201 (application/json)
 
+        {
+            'profile_id': 'ecc55hpp275pc3sm'
+        }
 
 # Group Renters
 
 ## Renters [/v1/renters/]
-
-+ model (application/json)
-
-    + Body
+### Get Renters [GET]
++ Response 200
 
             {
               "result": [
@@ -855,18 +1289,55 @@ Authenticating users through the **Knock API**
               ]
             }
 
-### Get renters [GET]
 
-+ Response 200
+## Renter [/v1/renter/{renter_id}]
+### Get Renter [GET]
++ Parameters
+    + renter_id (required, number, `7`) ... Unique renter ID
 
-    [Renters][]
++ Response 200 (application/json)
+    
+            {
+                'renter': {
+                    "created_time": "2014-09-16T17:29:54.926851+00:00",
+                    "id": 7,
+                    "is_active": true,
+                    "modified_time": "2014-09-16T17:29:54.926851+00:00",
+                    "provider": "knock",
+                    "social_provider_id": null,
+                    "username": "chekov@enterprise.com"
+                } 
+            }
+
+
+## Renter Info [/v1/renter/{renter_id}/info]
+### Get Renter Info
++ Parameters
+    + renter_id (required, number, `8`) ... Unique renter ID
+
++ Response 200 (application/json)
+            
+            {
+                 "renter_info": {
+                     "bio": "Explore strange new worlds",
+                     "co_tenants": 4,
+                     "email": "kirk@enterprise.com",
+                     "first_name": "Tiberius",
+                     "income": "100000",
+                     "job_title": "Captain",
+                     "last_name": "Kirk",
+                     "phone": "(206)765-4321",
+                     "photo": null,
+                     "renter_id": 8,
+                     "verification_method": null
+                 }            
+            }
+
 
 # Group Search
 
 ## Search [/v1/search/]
-
 + Model (application/json)
-
     + Body
    
              {
@@ -1013,13 +1484,10 @@ Authenticating users through the **Knock API**
 
 
 ## Search Suggest [/v1/search/suggest{?query}/]
-
 + Parameters
- 
     + query (required, string, `was`) ... The beginning letters of a city name [minimum 3] 
 
 + Model (application/json)
-
     + Body
         
             {
@@ -1082,19 +1550,50 @@ Authenticating users through the **Knock API**
             }
 
 ### Get search suggestion [GET]
-
 + Response 200
-
     [Search Suggest][]
 
 
+## Search Context [/v1/search/context/{city_id}]
+### Get Search Context [GET]
++ Parameters
+    + city_id (required, string, `falkner_ms`) ... Unique city ID 
+
++ Response 200 (application/json)
+
+            {
+                'city': 'spokane',
+                'shape': [
+                    [-88.964918, 34.829735],
+                    [-88.964918, 34.83021],
+                    [-88.964918, 34.83373],
+                    [-88.964878, 34.837811]
+                ]
+            }
+
+
+## Search Shapes [/v1/search/shapes/{shape_type}/{shape_id}]
+### Get Shape [GET]
++ Parameters
+    + shape_type (required, string, `Polygon`) ... Shape type
+    + shape_id (required, string, `falkner_ms`) ... Shape ID
+
++ Response 200 (application/json)
+
+            {                                          
+                'city': 'spokane',
+                'shape': [
+                    [-88.964918, 34.829735],
+                    [-88.964918, 34.83021],
+                    [-88.964918, 34.83373],
+                    [-88.964878, 34.837811]
+                ]
+            }
 
 # Group Static
 
 ## Sitemap [/v1/sitemap/]
-
 + Model (application/json)
-
     + Body
 
             {
@@ -1370,7 +1869,38 @@ Authenticating users through the **Knock API**
             }
 
 ### Get sitemap [GET]
-
 + Response 200
-
     [Sitemap][]
+
+# Group Upload
+
+## Upload Profile [/v1/upload/profile]
+### Upload Profile Picture [POST]
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+            -----BOUNDARY
+            Content-Disposition: form-data; name="image[file]"; filename="image.jpg"
+            Content-Type: image/jpeg
+            Content-Transfer-Encoding: base64
+      
+            /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+            HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+            MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+            AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+            AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+            -----BOUNDARY
+
++ Response 201 (application/json)
+
+            {
+                'message': 'picture has been uploaded'
+            }
+
++ Response 500 (application/json)
+
+            {
+                'error': {
+                    'message': 'Failed to upload [picture]',
+                    'exception': 'Exception:'
+                }
+            }
