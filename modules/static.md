@@ -1,9 +1,7 @@
 # Group Static
 
 ## Sitemap [/v1/sitemap/]
-
 + Model (application/json)
-
     + Body
 
             {
@@ -279,7 +277,5 @@
             }
 
 ### Get sitemap [GET]
-
 + Response 200
-
     [Sitemap][]
