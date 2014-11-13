@@ -3,7 +3,7 @@
 ## Register [/v1/auth/register]
 ### Register Renter or Manager [POST]
 + Request (application/json)
-    
+
             {
                 'type':'renter',
                 'firstname':'michael',
@@ -47,9 +47,9 @@ Validate a manager or renter
 ## Facebook [/v1/auth/facebook]
 ### Facebook Login [POST]
 + Request (application/json)
-    
+
         {
-            'clientID': 'SYgWfyVDcpmSDN2W',
+            'clientId': 'SYgWfyVDcpmSDN2W',
             'redirectUri': 'http://www.redirectdestination.com',
             'code': 'pmguG3D7nkNgdT7t'
         }
@@ -73,7 +73,7 @@ Validate a manager or renter
 + Request (application/json)
 
         {
-            'clientID': 'SYgWfyVDcpmSDN2W',
+            'clientId': 'SYgWfyVDcpmSDN2W',
             'redirectUri': 'http://www.redirectdestination.com',
             'code': 'pmguG3D7nkNgdT7t'
         }
