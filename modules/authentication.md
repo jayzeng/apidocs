@@ -51,7 +51,14 @@ Validate a manager or renter
         {
             'clientId': 'SYgWfyVDcpmSDN2W',
             'redirectUri': 'http://www.redirectdestination.com',
-            'code': 'pmguG3D7nkNgdT7t'
+            'code': 'pmguG3D7nkNgdT7t',
+            'client_type': 'web'
+        }
+
+Or for iOS
+        {
+            'clientId': 'ios',
+            'access_token': 'supertoken_accesstoken'
         }
 
 + Response 201 (application/json)
@@ -75,7 +82,14 @@ Validate a manager or renter
         {
             'clientId': 'SYgWfyVDcpmSDN2W',
             'redirectUri': 'http://www.redirectdestination.com',
-            'code': 'pmguG3D7nkNgdT7t'
+            'code': 'pmguG3D7nkNgdT7t',
+            'client_type': 'web'
+        }
+
+Or for iOS
+        {
+            'clientId': 'ios',
+            'access_token': 'supertoken_accesstoken'
         }
 
 + Response 201 (application/json)
